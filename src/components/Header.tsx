@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Phone, Mail, MapPin, ChevronDown, Search } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { GlobalSearch } from "@/components/GlobalSearch";
+import logoByoma from "@/assets/logo-byoma.png";
 
 const services = [
   { name: "Négoce", href: "/services/negoce" },

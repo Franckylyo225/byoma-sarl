@@ -9,7 +9,7 @@ import {
   Mail,
   ArrowUp
 } from "lucide-react";
-import logoAne from "@/assets/logo-ane-full.png";
+import logoByoma from "@/assets/logo-byoma.png";
 
 const quickLinks = [
   { name: "Accueil", href: "/" },
