@@ -4,15 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Phone, Mail, MapPin, ChevronDown, Search } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { GlobalSearch } from "@/components/GlobalSearch";
-import logoAne from "@/assets/logo-ane.png";
 
 const services = [
-  { name: "Aménagement Foncier", href: "/services/amenagement-foncier" },
-  { name: "Aménagement Forestier", href: "/services/amenagement-forestier" },
-  { name: "Bâtiment & Travaux Publics", href: "/services/btp" },
-  { name: "Topographie", href: "/services/topographie" },
-  { name: "Géomatique", href: "/services/geomatique" },
-  { name: "Informatique", href: "/services/informatique" },
+  { name: "Négoce", href: "/services/negoce" },
+  { name: "Distribution pétrolière et gazière", href: "/services/distribution-petroliere" },
+  { name: "Promotion et gestion immobilière", href: "/services/immobilier" },
 ];
 
 const navigation = [
@@ -32,7 +28,6 @@ export function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const location = useLocation();
 
-  // Handle keyboard shortcut for search
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
@@ -61,18 +56,18 @@ export function Header() {
       <div className="hidden lg:block bg-primary text-primary-foreground py-2">
         <div className="container-custom flex items-center justify-between text-sm">
           <div className="flex items-center gap-6">
-            <a href="tel:+2250768087101" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <a href="tel:+2252722251544" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <Phone size={14} />
-              <span>+225 07 68 08 71 01</span>
+              <span>27 22 25 15 44</span>
             </a>
-            <a href="mailto:info@ane.ci" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <a href="mailto:info@byoma.ci" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <Mail size={14} />
-              <span>info@ane.ci</span>
+              <span>info@byoma.ci</span>
             </a>
           </div>
           <div className="flex items-center gap-2">
             <MapPin size={14} />
-            <span>Cocody Angré, Dokui Djomi, Abidjan</span>
+            <span>Cocody plateau Dokui, SOPIM, Abidjan</span>
           </div>
         </div>
       </div>
@@ -90,11 +85,9 @@ export function Header() {
           <nav className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center group">
-              <img 
-                src={logoAne} 
-                alt="ANE SARL - Aménagement Nature Environnement" 
-                className="h-12 md:h-14 w-auto transition-transform group-hover:scale-105"
-              />
+              <span className="font-display text-xl md:text-2xl font-bold text-foreground transition-transform group-hover:scale-105">
+                BYOMA <span className="text-primary">SARL</span>
+              </span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -181,7 +174,7 @@ export function Header() {
               </button>
               <Link to="/contact">
                 <Button variant="premium" size="lg">
-                  Demander un devis
+                  Nous contacter
                 </Button>
               </Link>
             </div>
@@ -265,7 +258,7 @@ export function Header() {
               </button>
               <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                 <Button variant="premium" className="mt-2 w-full">
-                  Demander un devis
+                  Nous contacter
                 </Button>
               </Link>
             </div>
