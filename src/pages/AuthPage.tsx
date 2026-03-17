@@ -189,8 +189,8 @@ export default function AuthPage() {
             {/* Logo & Header */}
             <div className="text-center mb-8">
               <img 
-                src={logoAneFull} 
-                alt="ANE SARL" 
+                src={logoByoma} 
+                alt="BYOMA SARL" 
                 className="h-16 mx-auto mb-6"
               />
               <h2 className="font-display text-2xl sm:text-3xl font-bold text-foreground">
