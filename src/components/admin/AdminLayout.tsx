@@ -19,7 +19,7 @@ import {
   MessageSquareQuote
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import logoAneFull from '@/assets/logo-ane-full.png';
+import logoByoma from '@/assets/logo-byoma.png';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -181,7 +181,7 @@ export default function AdminLayout() {
       )}>
         <div className="flex flex-col h-full">
           <div className="h-16 flex items-center px-6 border-b">
-            <img src={logoAneFull} alt="ANE SARL" className="h-8" />
+            <img src={logoByoma} alt="BYOMA SARL" className="h-8" />
           </div>
 
           <nav className="flex-1 p-4 space-y-1 overflow-y-auto">

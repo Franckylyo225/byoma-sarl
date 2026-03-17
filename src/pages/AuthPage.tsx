@@ -9,7 +9,7 @@ import { useToast } from '@/hooks/use-toast';
 import { z } from 'zod';
 import { Loader2, ArrowLeft, TreePine, Shield, Users } from 'lucide-react';
 import heroForestRoad from '@/assets/hero-forest-road.jpg';
-import logoAneFull from '@/assets/logo-ane-full.png';
+import logoByoma from '@/assets/logo-byoma.png';
 
 const authSchema = z.object({
   email: z.string().email('Email invalide'),
@@ -113,7 +113,7 @@ export default function AuthPage() {
       <div className="hidden lg:flex lg:w-1/2 xl:w-3/5 relative">
         <img
           src={heroForestRoad}
-          alt="Forêt ANE SARL"
+          alt="Forêt BYOMA SARL"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/70 to-primary/90" />
@@ -165,7 +165,7 @@ export default function AuthPage() {
 
           {/* Footer */}
           <p className="text-primary-foreground/60 text-sm">
-            © {new Date().getFullYear()} ANE SARL. Tous droits réservés.
+            © {new Date().getFullYear()} BYOMA SARL. Tous droits réservés.
           </p>
         </div>
       </div>
@@ -189,8 +189,8 @@ export default function AuthPage() {
             {/* Logo & Header */}
             <div className="text-center mb-8">
               <img 
-                src={logoAneFull} 
-                alt="ANE SARL" 
+                src={logoByoma} 
+                alt="BYOMA SARL" 
                 className="h-16 mx-auto mb-6"
               />
               <h2 className="font-display text-2xl sm:text-3xl font-bold text-foreground">
@@ -301,7 +301,7 @@ export default function AuthPage() {
 
             {/* Mobile footer */}
             <p className="lg:hidden text-center text-muted-foreground text-sm mt-8">
-              © {new Date().getFullYear()} ANE SARL. Tous droits réservés.
+              © {new Date().getFullYear()} BYOMA SARL. Tous droits réservés.
             </p>
           </div>
         </div>

@@ -9,7 +9,7 @@ import {
   Mail,
   ArrowUp
 } from "lucide-react";
-import logoAne from "@/assets/logo-ane-full.png";
+import logoByoma from "@/assets/logo-byoma.png";
 
 const quickLinks = [
   { name: "Accueil", href: "/" },
@@ -46,7 +46,7 @@ export function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-6">
-              <span className="font-display text-2xl font-bold text-primary-foreground">BYOMA SARL</span>
+              <img src={logoByoma} alt="BYOMA SARL" className="h-12 w-auto brightness-0 invert" />
             </Link>
             <p className="text-primary-foreground/60 text-xs uppercase tracking-wider mb-3">
               Filiale de BYOMA GROUP

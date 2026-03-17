@@ -72,7 +72,7 @@ export default function BtpPage() {
               </Link>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-premium">
-              <img src={serviceBtp} alt="Techniciens ANE SARL avec équipement de mesure sur chantier" className="w-full h-full object-cover" />
+              <img src={serviceBtp} alt="Techniciens BYOMA SARL avec équipement de mesure sur chantier" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
