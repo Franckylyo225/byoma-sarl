@@ -4,23 +4,23 @@ import { useScrollReveal, useScrollRevealMultiple } from "@/hooks/useScrollRevea
 const badges = [
   {
     icon: Shield,
-    title: "Certifié ISO",
-    description: "Normes internationales de qualité",
+    title: "Fiabilité",
+    description: "Solutions fiables et durables",
   },
   {
     icon: Award,
-    title: "10 Ans",
-    description: "D'expérience sur le terrain",
+    title: "BYOMA GROUP",
+    description: "Filiale d'un groupe solide",
   },
   {
     icon: Users,
-    title: "500+ Projets",
-    description: "Réalisés avec succès",
+    title: "Multisectoriel",
+    description: "3 secteurs stratégiques",
   },
   {
     icon: Leaf,
-    title: "Éco-responsable",
-    description: "Engagement environnemental",
+    title: "Durabilité",
+    description: "Engagement responsable",
   },
 ];
 
