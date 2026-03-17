@@ -2,114 +2,115 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* ANE SARL Premium Design System */
+/* BYOMA SARL Design System */
 
 @layer base {
   :root {
-    /* ANE Brand Colors - Based on Logo */
+    /* BYOMA Brand Colors */
     --background: 0 0% 99%;
-    --foreground: 220 10% 20%;
+    --foreground: 222 47% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 10% 20%;
+    --card-foreground: 222 47% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 10% 20%;
+    --popover-foreground: 222 47% 15%;
 
-    /* ANE Green - Primary (from logo gradient) */
-    --primary: 140 70% 35%;
+    /* BYOMA Navy Blue - Primary */
+    --primary: 222 52% 23%;
     --primary-foreground: 0 0% 100%;
 
     /* Light Gray - Secondary */
-    --secondary: 220 10% 96%;
-    --secondary-foreground: 220 10% 25%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 47% 20%;
 
     /* Muted tones */
-    --muted: 220 10% 94%;
+    --muted: 220 14% 94%;
     --muted-foreground: 220 10% 45%;
 
-    /* ANE Dark Green Accent */
-    --accent: 145 75% 28%;
+    /* BYOMA Red Accent */
+    --accent: 358 80% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 10% 90%;
-    --input: 220 10% 90%;
-    --ring: 140 70% 35%;
+    --border: 220 13% 90%;
+    --input: 220 13% 90%;
+    --ring: 222 52% 23%;
 
     --radius: 0.5rem;
 
-    /* Custom ANE brand tokens */
-    --ane-green: 140 70% 35%;
-    --ane-green-dark: 145 75% 22%;
-    --ane-green-light: 135 65% 45%;
-    --ane-gray: 220 5% 50%;
-    --ane-gray-dark: 220 10% 35%;
-    --ane-gray-light: 220 10% 75%;
+    /* Custom BYOMA brand tokens */
+    --byoma-navy: 222 52% 23%;
+    --byoma-navy-dark: 222 55% 16%;
+    --byoma-navy-light: 222 45% 35%;
+    --byoma-red: 358 80% 50%;
+    --byoma-red-dark: 358 85% 42%;
+    --byoma-blue: 198 78% 55%;
+    --byoma-blue-light: 198 80% 68%;
 
     /* Gradients matching logo */
-    --gradient-hero: linear-gradient(135deg, hsl(145 75% 22%) 0%, hsl(140 70% 35%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(140 70% 35%) 0%, hsl(135 65% 45%) 100%);
-    --gradient-overlay: linear-gradient(180deg, rgba(22, 101, 52, 0.95) 0%, rgba(34, 139, 34, 0.85) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(222 55% 16%) 0%, hsl(222 52% 23%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(358 80% 50%) 0%, hsl(358 75% 58%) 100%);
+    --gradient-overlay: linear-gradient(180deg, rgba(27, 43, 91, 0.95) 0%, rgba(35, 55, 110, 0.85) 100%);
 
     /* Shadows */
-    --shadow-sm: 0 2px 8px rgba(22, 101, 52, 0.06);
-    --shadow-md: 0 4px 20px rgba(22, 101, 52, 0.08);
-    --shadow-lg: 0 8px 40px rgba(22, 101, 52, 0.12);
-    --shadow-glow: 0 0 30px rgba(34, 139, 34, 0.25);
+    --shadow-sm: 0 2px 8px rgba(27, 43, 91, 0.06);
+    --shadow-md: 0 4px 20px rgba(27, 43, 91, 0.08);
+    --shadow-lg: 0 8px 40px rgba(27, 43, 91, 0.12);
+    --shadow-glow: 0 0 30px rgba(227, 30, 36, 0.2);
 
     /* Sidebar */
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 220 10% 20%;
-    --sidebar-primary: 140 70% 35%;
+    --sidebar-foreground: 222 47% 15%;
+    --sidebar-primary: 222 52% 23%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 10% 94%;
-    --sidebar-accent-foreground: 220 10% 20%;
-    --sidebar-border: 220 10% 90%;
-    --sidebar-ring: 140 70% 35%;
+    --sidebar-accent: 220 14% 94%;
+    --sidebar-accent-foreground: 222 47% 15%;
+    --sidebar-border: 220 13% 90%;
+    --sidebar-ring: 222 52% 23%;
   }
 
   .dark {
-    --background: 220 15% 8%;
+    --background: 222 20% 8%;
     --foreground: 0 0% 98%;
 
-    --card: 220 15% 12%;
+    --card: 222 20% 12%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 220 15% 12%;
+    --popover: 222 20% 12%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 140 65% 45%;
-    --primary-foreground: 220 15% 8%;
+    --primary: 198 78% 55%;
+    --primary-foreground: 222 20% 8%;
 
-    --secondary: 220 10% 16%;
+    --secondary: 222 15% 16%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 220 10% 18%;
+    --muted: 222 15% 18%;
     --muted-foreground: 220 10% 65%;
 
-    --accent: 140 65% 45%;
-    --accent-foreground: 220 15% 8%;
+    --accent: 358 80% 55%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 10% 20%;
-    --input: 220 10% 20%;
-    --ring: 140 65% 45%;
+    --border: 222 15% 20%;
+    --input: 222 15% 20%;
+    --ring: 198 78% 55%;
 
-    --sidebar-background: 220 15% 10%;
+    --sidebar-background: 222 20% 10%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 140 65% 45%;
-    --sidebar-primary-foreground: 220 15% 8%;
-    --sidebar-accent: 220 10% 15%;
+    --sidebar-primary: 198 78% 55%;
+    --sidebar-primary-foreground: 222 20% 8%;
+    --sidebar-accent: 222 15% 15%;
     --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 220 10% 20%;
-    --sidebar-ring: 140 65% 45%;
+    --sidebar-border: 222 15% 20%;
+    --sidebar-ring: 198 78% 55%;
   }
 }
 
@@ -336,5 +337,5 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--forest-light));
+  background: hsl(var(--byoma-navy-light));
 }

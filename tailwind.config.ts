@@ -15,7 +15,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
-        display: ["Playfair Display", "Georgia", "serif"],
+        display: ["Montserrat", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -61,21 +61,20 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        ane: {
-          green: "hsl(var(--ane-green))",
-          "green-dark": "hsl(var(--ane-green-dark))",
-          "green-light": "hsl(var(--ane-green-light))",
-          gray: "hsl(var(--ane-gray))",
-          "gray-dark": "hsl(var(--ane-gray-dark))",
-          "gray-light": "hsl(var(--ane-gray-light))",
+        byoma: {
+          navy: "hsl(var(--byoma-navy))",
+          "navy-dark": "hsl(var(--byoma-navy-dark))",
+          "navy-light": "hsl(var(--byoma-navy-light))",
+          red: "hsl(var(--byoma-red))",
+          "red-dark": "hsl(var(--byoma-red-dark))",
+          blue: "hsl(var(--byoma-blue))",
+          "blue-light": "hsl(var(--byoma-blue-light))",
         },
         copper: {
-          DEFAULT: "hsl(35 80% 45%)",
-          light: "hsl(35 75% 55%)",
+          DEFAULT: "hsl(var(--byoma-red))",
+          light: "hsl(358 75% 58%)",
         },
-        forest: {
-          light: "hsl(140 65% 40%)",
-        },
+        "ane-green-dark": "hsl(var(--byoma-navy-dark))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -107,9 +106,9 @@ export default {
         "pulse-soft": "pulse-soft 3s ease-in-out infinite",
       },
       boxShadow: {
-        "premium": "0 4px 20px rgba(27, 67, 50, 0.08)",
-        "premium-lg": "0 8px 40px rgba(27, 67, 50, 0.12)",
-        "glow": "0 0 30px rgba(184, 134, 11, 0.2)",
+        "premium": "0 4px 20px rgba(27, 43, 91, 0.08)",
+        "premium-lg": "0 8px 40px rgba(27, 43, 91, 0.12)",
+        "glow": "0 0 30px rgba(227, 30, 36, 0.2)",
       },
     },
   },
