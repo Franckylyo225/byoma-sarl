@@ -12,12 +12,9 @@ import NewsPage from "./pages/NewsPage";
 import ArticleDetailPage from "./pages/ArticleDetailPage";
 import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
-import AmenagementFoncierPage from "./pages/services/AmenagementFoncierPage";
-import AmenagementForestierPage from "./pages/services/AmenagementForestierPage";
-import BtpPage from "./pages/services/BtpPage";
-import TopographiePage from "./pages/services/TopographiePage";
-import GeomatiquePage from "./pages/services/GeomatiquePage";
-import InformatiquePage from "./pages/services/InformatiquePage";
+import NegocePage from "./pages/services/NegocePage";
+import DistributionPetrolierePage from "./pages/services/DistributionPetrolierePage";
+import ImmobilierPage from "./pages/services/ImmobilierPage";
 import AuthPage from "./pages/AuthPage";
 import AdminLayout from "./components/admin/AdminLayout";
 import DashboardPage from "./pages/admin/DashboardPage";
@@ -42,12 +39,9 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/services/amenagement-foncier" element={<AmenagementFoncierPage />} />
-            <Route path="/services/amenagement-forestier" element={<AmenagementForestierPage />} />
-            <Route path="/services/btp" element={<BtpPage />} />
-            <Route path="/services/topographie" element={<TopographiePage />} />
-            <Route path="/services/geomatique" element={<GeomatiquePage />} />
-            <Route path="/services/informatique" element={<InformatiquePage />} />
+            <Route path="/services/negoce" element={<NegocePage />} />
+            <Route path="/services/distribution-petroliere" element={<DistributionPetrolierePage />} />
+            <Route path="/services/immobilier" element={<ImmobilierPage />} />
             <Route path="/projets" element={<ProjectsPage />} />
             <Route path="/projets/:id" element={<ProjectDetailPage />} />
             <Route path="/a-propos" element={<AboutPage />} />

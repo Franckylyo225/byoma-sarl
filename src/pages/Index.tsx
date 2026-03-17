@@ -4,8 +4,8 @@ import { TrustBadges } from "@/components/TrustBadges";
 import { Services } from "@/components/Services";
 import { Projects } from "@/components/Projects";
 import { About } from "@/components/About";
+import { WhyByoma } from "@/components/WhyByoma";
 import { Testimonials } from "@/components/Testimonials";
-import { VideoSection } from "@/components/VideoSection";
 import { News } from "@/components/News";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
@@ -18,10 +18,10 @@ const Index = () => {
         <Hero />
         <TrustBadges />
         <About />
-        <VideoSection />
-        <News />
+        <WhyByoma />
         <Services />
         <Projects />
+        <News />
         <Testimonials />
       </main>
       <Footer />

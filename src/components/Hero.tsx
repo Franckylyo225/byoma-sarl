@@ -5,10 +5,10 @@ import { supabase } from "@/integrations/supabase/client";
 import { Link } from "react-router-dom";
 
 // Import fallback images
-import heroForestRoad from "@/assets/hero-forest-road.jpg";
-import heroLandPlot from "@/assets/hero-land-plot.jpg";
-import heroDrone from "@/assets/hero-drone.jpg";
-import heroInnovation from "@/assets/hero-innovation.jpg";
+import heroCity from "@/assets/hero-byoma-city.jpg";
+import heroNegoce from "@/assets/service-negoce.jpg";
+import heroDistribution from "@/assets/service-distribution.jpg";
+import heroImmobilier from "@/assets/service-immobilier.jpg";
 
 interface HeroSlide {
   id: string;
@@ -29,7 +29,7 @@ const fallbackSlides: HeroSlide[] = [
     headline: "Un partenaire multisectoriel,",
     highlight: "engagé pour vous",
     description: "BYOMA SARL, un partenaire multisectoriel engagé pour des solutions fiables et durables.",
-    image_url: heroForestRoad,
+    image_url: heroCity,
     button_text: "Découvrir nos services",
     button_link: "#services",
   },
@@ -39,7 +39,7 @@ const fallbackSlides: HeroSlide[] = [
     headline: "L'expérience du",
     highlight: "confort et de l'élégance",
     description: "Opérant dans plusieurs secteurs stratégiques à forte valeur ajoutée pour anticiper les besoins du marché.",
-    image_url: heroLandPlot,
+    image_url: heroNegoce,
     button_text: "Découvrir nos services",
     button_link: "#services",
   },
@@ -49,7 +49,7 @@ const fallbackSlides: HeroSlide[] = [
     headline: "Distribution de produits",
     highlight: "pétroliers et gaziers",
     description: "Une vision orientée vers la performance et la durabilité dans le secteur énergétique.",
-    image_url: heroDrone,
+    image_url: heroDistribution,
     button_text: "Découvrir nos services",
     button_link: "#services",
   },
@@ -59,7 +59,7 @@ const fallbackSlides: HeroSlide[] = [
     headline: "Promotion &",
     highlight: "gestion immobilière",
     description: "Intervenir efficacement dans l'immobilier avec des solutions fiables et durables.",
-    image_url: heroInnovation,
+    image_url: heroImmobilier,
     button_text: "Découvrir nos services",
     button_link: "#services",
   },
@@ -130,7 +130,7 @@ export function Hero() {
 
   // Get image URL (handle both local imports and remote URLs)
   const getImageUrl = (imageUrl: string | null): string => {
-    if (!imageUrl) return heroForestRoad;
+    if (!imageUrl) return heroCity;
     if (imageUrl.startsWith('http') || imageUrl.startsWith('blob')) {
       return imageUrl;
     }
