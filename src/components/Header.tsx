@@ -86,9 +86,11 @@ export function Header() {
           <nav className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center group">
-              <span className="font-display text-xl md:text-2xl font-bold text-foreground transition-transform group-hover:scale-105">
-                BYOMA <span className="text-primary">SARL</span>
-              </span>
+              <img 
+                src={logoByoma} 
+                alt="BYOMA SARL" 
+                className="h-10 md:h-12 w-auto transition-transform group-hover:scale-105"
+              />
             </Link>
 
             {/* Desktop Navigation */}

@@ -19,7 +19,7 @@ import {
   MessageSquareQuote
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import logoAneFull from '@/assets/logo-ane-full.png';
+import logoByoma from '@/assets/logo-byoma.png';
 import {
   DropdownMenu,
   DropdownMenuContent,
