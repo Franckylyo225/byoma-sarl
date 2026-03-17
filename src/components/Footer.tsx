@@ -21,12 +21,9 @@ const quickLinks = [
 ];
 
 const services = [
-  "Aménagement Foncier",
-  "Aménagement Forestier",
-  "Bâtiment & Travaux Publics",
-  "Topographie",
-  "Géomatique",
-  "Informatique",
+  "Négoce",
+  "Distribution pétrolière et gazière",
+  "Promotion et gestion immobilière",
 ];
 
 const socialLinks = [
@@ -49,15 +46,14 @@ export function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-6">
-              <img 
-                src={logoAne} 
-                alt="ANE SARL" 
-                className="h-12 w-auto"
-              />
+              <span className="font-display text-2xl font-bold text-primary-foreground">BYOMA SARL</span>
             </Link>
+            <p className="text-primary-foreground/60 text-xs uppercase tracking-wider mb-3">
+              Filiale de BYOMA GROUP
+            </p>
             <p className="text-primary-foreground/70 mb-6 leading-relaxed">
-              Votre partenaire de confiance pour un aménagement durable 
-              des terres et forêts en Côte d'Ivoire.
+              Partenaire multisectoriel engagé pour des solutions 
+              fiables et durables en Côte d'Ivoire.
             </p>
             {/* Social Links */}
             <div className="flex gap-3">
@@ -115,20 +111,26 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-copper flex-shrink-0 mt-0.5" />
                 <span className="text-primary-foreground/70">
-                  Cocody Angré, Dokui Djomi<br />
-                  11 BP 2917 Abidjan 17
+                  Cocody plateau Dokui, SOPIM<br />
+                  05 BP 3320 Abidjan 05
                 </span>
               </li>
               <li>
-                <a href="tel:+2250768087101" className="flex items-center gap-3 text-primary-foreground/70 hover:text-copper transition-colors">
+                <a href="tel:+2252722251544" className="flex items-center gap-3 text-primary-foreground/70 hover:text-copper transition-colors">
                   <Phone className="w-5 h-5 text-copper" />
-                  +225 07 68 08 71 01
+                  27 22 25 15 44
                 </a>
               </li>
               <li>
-                <a href="mailto:info@ane.ci" className="flex items-center gap-3 text-primary-foreground/70 hover:text-copper transition-colors">
+                <a href="tel:+2250716342901" className="flex items-center gap-3 text-primary-foreground/70 hover:text-copper transition-colors">
+                  <Phone className="w-5 h-5 text-copper" />
+                  07 16 34 29 01
+                </a>
+              </li>
+              <li>
+                <a href="mailto:info@byoma.ci" className="flex items-center gap-3 text-primary-foreground/70 hover:text-copper transition-colors">
                   <Mail className="w-5 h-5 text-copper" />
-                  info@ane.ci
+                  info@byoma.ci
                 </a>
               </li>
             </ul>
@@ -140,7 +142,7 @@ export function Footer() {
       <div className="border-t border-primary-foreground/10">
         <div className="container-custom py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-primary-foreground/60 text-sm text-center md:text-left">
-            © {new Date().getFullYear()} ANE SARL. Tous droits réservés.
+            © {new Date().getFullYear()} BYOMA SARL. Tous droits réservés. | Filiale de BYOMA GROUP
           </p>
           <div className="flex items-center gap-6 text-sm text-primary-foreground/60">
             <a href="#" className="hover:text-copper transition-colors">

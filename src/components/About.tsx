@@ -6,18 +6,18 @@ import { useScrollReveal, useScrollRevealMultiple } from "@/hooks/useScrollRevea
 const values = [
   {
     icon: Award,
-    title: "Excellence",
-    description: "Nous visons l'excellence dans chaque projet, avec des standards de qualité irréprochables.",
+    title: "Performance",
+    description: "Une vision orientée vers la performance et la durabilité dans chacun de nos secteurs d'activité.",
   },
   {
     icon: Users,
-    title: "Engagement",
-    description: "Nous sommes engagés auprès de nos clients et partenaires pour leur satisfaction totale.",
+    title: "Partenariats",
+    description: "Des partenariats solides pour intervenir efficacement dans l'énergie, l'immobilier et le commerce.",
   },
   {
     icon: Target,
-    title: "Innovation",
-    description: "Nous intégrons les dernières technologies pour des solutions modernes et efficaces.",
+    title: "Diversification",
+    description: "Un modèle de croissance diversifié opérant dans plusieurs secteurs stratégiques à forte valeur ajoutée.",
   },
 ];
 
@@ -42,7 +42,7 @@ export function About() {
             <div className="relative rounded-2xl overflow-hidden shadow-premium-lg">
               <img
                 src={aboutImage}
-                alt="Expert ANE SARL"
+                alt="BYOMA SARL"
                 className="w-full h-[500px] object-cover object-top"
               />
               {/* Overlay gradient */}
@@ -52,8 +52,8 @@ export function About() {
             <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-copper/30 rounded-2xl -z-10" />
             {/* Stats badge */}
             <div className="absolute -bottom-6 -left-6 bg-copper text-primary-foreground px-6 py-4 rounded-xl shadow-premium">
-              <div className="text-3xl font-bold font-display">10</div>
-              <div className="text-sm opacity-90">Années d'expérience</div>
+              <div className="text-3xl font-bold font-display">2023</div>
+              <div className="text-sm opacity-90">Année de création</div>
             </div>
           </div>
 
@@ -66,18 +66,18 @@ export function About() {
               À propos de nous
             </span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Expert en aménagement,{" "}
-              <span className="text-primary">artisan de votre succès</span>
+              Partenaire multisectoriel,{" "}
+              <span className="text-primary">solutions fiables et durables</span>
             </h2>
             <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-              Notre mission est de valoriser et de transformer les espaces fonciers et forestiers 
-              en solutions durables et harmonieuses, en alliant innovation, respect de l'environnement 
-              et satisfaction client.
+              BYOMA SARL, filiale de BYOMA GROUP, créée en octobre 2023, est une entreprise 
+              à modèle de croissance diversifié, opérant dans plusieurs secteurs stratégiques 
+              à forte valeur ajoutée.
             </p>
             <p className="text-muted-foreground mb-8 leading-relaxed">
-              Nous nous engageons à accompagner nos partenaires dans la réalisation de leurs projets, 
-              tout en contribuant à un avenir équilibré entre développement humain et préservation 
-              des ressources naturelles.
+              Grâce à une gouvernance rigoureuse et à des partenariats solides, BYOMA SARL se 
+              positionne comme un acteur dynamique et structuré, capable d'intervenir efficacement 
+              aussi bien dans les secteurs énergétiques que dans l'immobilier, le commerce et l'événementiel.
             </p>
 
             <Button variant="premium" size="lg">

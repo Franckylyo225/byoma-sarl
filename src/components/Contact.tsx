@@ -14,19 +14,19 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Adresse",
-    content: "Cocody Angré, Dokui Djomi",
-    detail: "11 BP 2917 Abidjan 17",
+    content: "Cocody plateau Dokui, SOPIM",
+    detail: "05 BP 3320 Abidjan 05",
   },
   {
     icon: Phone,
     title: "Téléphone",
-    content: "+225 07 68 08 71 01",
+    content: "27 22 25 15 44 / 07 16 34 29 01",
     detail: "Du lundi au vendredi",
   },
   {
     icon: Mail,
     title: "Email",
-    content: "info@ane.ci",
+    content: "info@byoma.ci",
     detail: "Réponse sous 24h",
   },
   {
@@ -52,7 +52,6 @@ export function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
     toast({
@@ -82,8 +81,8 @@ export function Contact() {
             Parlons de votre <span className="text-primary">projet</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Vous avez un projet d'aménagement ? Contactez-nous pour une étude 
-            personnalisée et un devis gratuit.
+            Vous avez un projet ? Contactez BYOMA SARL pour une étude 
+            personnalisée et des solutions adaptées.
           </p>
         </div>
 
@@ -116,7 +115,7 @@ export function Contact() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Localisation ANE SARL"
+                title="Localisation BYOMA SARL"
               />
             </div>
           </div>
@@ -128,7 +127,7 @@ export function Contact() {
               className="bg-card rounded-2xl shadow-premium p-8"
             >
               <h3 className="font-display text-2xl font-bold text-foreground mb-6">
-                Demande de devis gratuit
+                Demande de renseignements
               </h3>
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
@@ -187,12 +186,9 @@ export function Contact() {
                     className="w-full px-4 py-3 bg-secondary border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                   >
                     <option value="">Sélectionnez un service</option>
-                    <option value="foncier">Aménagement Foncier</option>
-                    <option value="forestier">Aménagement Forestier</option>
-                    <option value="btp">Bâtiment & Travaux Publics</option>
-                    <option value="topographie">Topographie</option>
-                    <option value="geomatique">Géomatique</option>
-                    <option value="informatique">Informatique</option>
+                    <option value="negoce">Négoce</option>
+                    <option value="distribution">Distribution pétrolière et gazière</option>
+                    <option value="immobilier">Promotion et gestion immobilière</option>
                   </select>
                 </div>
               </div>

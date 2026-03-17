@@ -12,33 +12,32 @@ import { useScrollReveal, useScrollRevealMultiple } from "@/hooks/useScrollRevea
 const values = [
   {
     icon: Award,
-    title: "Excellence",
-    description: "Nous visons l'excellence dans chaque projet, avec des standards de qualité irréprochables.",
+    title: "Performance",
+    description: "Une vision orientée vers la performance et la durabilité dans chacun de nos secteurs d'activité.",
   },
   {
     icon: Users,
-    title: "Engagement",
-    description: "Nous sommes engagés auprès de nos clients et partenaires pour leur satisfaction totale.",
+    title: "Partenariats",
+    description: "Des partenariats solides pour intervenir efficacement dans l'énergie, l'immobilier et le commerce.",
   },
   {
     icon: Target,
-    title: "Innovation",
-    description: "Nous intégrons les dernières technologies pour des solutions modernes et efficaces.",
+    title: "Diversification",
+    description: "Un modèle de croissance diversifié opérant dans plusieurs secteurs stratégiques à forte valeur ajoutée.",
   },
 ];
 
-
 const stats = [
-  { value: "10", label: "Années d'expérience" },
-  { value: "500+", label: "Projets réalisés" },
-  { value: "72", label: "Forêts classées" },
-  { value: "50+", label: "Experts qualifiés" },
+  { value: "2023", label: "Année de création" },
+  { value: "3", label: "Secteurs d'activité" },
+  { value: "100%", label: "Engagement qualité" },
+  { value: "∞", label: "Ambitions" },
 ];
 
 const teamImages = [
-  { src: teamDroneImage, alt: "Expert en pilotage de drone" },
+  { src: teamDroneImage, alt: "Secteur énergétique" },
   { src: teamWorkImage, alt: "Équipe sur le terrain" },
-  { src: teamGroupImage, alt: "Équipe de topographes" },
+  { src: teamGroupImage, alt: "Équipe BYOMA" },
 ];
 
 export default function AboutPage() {
@@ -61,10 +60,10 @@ export default function AboutPage() {
               À Propos
             </span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Expert en aménagement, artisan de votre succès
+              Partenaire multisectoriel, solutions durables
             </h1>
             <p className="text-primary-foreground/80 text-lg md:text-xl">
-              Depuis 2015, ANE SARL accompagne les acteurs publics et privés dans leurs projets d'aménagement.
+              BYOMA SARL, filiale de BYOMA GROUP, est engagée pour des solutions fiables et durables depuis 2023.
             </p>
           </div>
         </div>
@@ -81,18 +80,18 @@ export default function AboutPage() {
               <History className="w-8 h-8 text-primary" />
             </div>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Notre histoire
+              Présentation de l'entreprise
             </h2>
             <p className="text-muted-foreground text-lg md:text-xl leading-relaxed">
-              Créée en 2015, ANE SARL a démarré avec une vision claire : apporter des solutions expertes et personnalisées 
-              dans les domaines de l'aménagement foncier, forestier, BTP, topographie, géomatique. Au fil des années, 
-              nous avons élargi notre champ d'expertise pour répondre aux besoins variés de nos clients tout en gardant 
-              une approche humaine et centrée sur l'excellence.
+              BYOMA SARL, filiale de BYOMA GROUP, créée en octobre 2023, est une entreprise à modèle de croissance 
+              diversifié, opérant dans plusieurs secteurs stratégiques à forte valeur ajoutée. Forte d'une vision 
+              orientée vers la performance et la durabilité, BYOMA SARL développe des activités complémentaires 
+              lui permettant d'anticiper les besoins du marché et de saisir des opportunités dans des domaines 
+              clés de l'économie.
             </p>
           </div>
         </div>
       </section>
-
 
       {/* About Content - Mission */}
       <section className="section-padding bg-background">
@@ -106,7 +105,7 @@ export default function AboutPage() {
               <div className="relative rounded-2xl overflow-hidden shadow-premium-lg">
                 <img
                   src={aboutImage}
-                  alt="Équipe ANE SARL"
+                  alt="Équipe BYOMA SARL"
                   className="w-full h-[500px] object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
@@ -117,31 +116,30 @@ export default function AboutPage() {
             {/* Content */}
             <div>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Notre mission
+                Notre vision
               </h2>
               <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-                Notre mission est de valoriser et de transformer les espaces fonciers et forestiers 
-                en solutions durables et harmonieuses, en alliant innovation, respect de l'environnement 
-                et satisfaction client.
+                Grâce à une gouvernance rigoureuse et à des partenariats solides, BYOMA SARL se 
+                positionne comme un acteur dynamique et structuré, capable d'intervenir efficacement 
+                aussi bien dans les secteurs énergétiques que dans l'immobilier, le commerce et l'événementiel.
               </p>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                Nous nous engageons à accompagner nos partenaires dans la réalisation de leurs projets, 
-                tout en contribuant à un avenir équilibré entre développement humain et préservation 
-                des ressources naturelles.
+                L'expérience du confort et de l'élégance — notre engagement envers chaque client 
+                et partenaire pour des solutions qui dépassent les attentes.
               </p>
               
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center gap-3 text-foreground">
                   <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                  Expertise reconnue en aménagement foncier et forestier
+                  Négoce et commerce diversifié
                 </li>
                 <li className="flex items-center gap-3 text-foreground">
                   <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                  Équipe pluridisciplinaire de professionnels qualifiés
+                  Distribution de produits pétroliers et gaziers
                 </li>
                 <li className="flex items-center gap-3 text-foreground">
                   <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                  Technologies de pointe pour des résultats précis
+                  Promotion et gestion immobilière
                 </li>
               </ul>
 
@@ -218,9 +216,9 @@ export default function AboutPage() {
               Notre équipe
             </h2>
             <p className="text-muted-foreground text-lg md:text-xl leading-relaxed">
-              Derrière ANE SARL, une équipe d'experts passionnés et dévoués. Chaque membre apporte une expertise unique, 
-              que ce soit dans la topographie, la géomatique, l'aménagement ou la gestion informatique. 
-              Ensemble, nous travaillons pour vous offrir des solutions adaptées et innovantes.
+              Derrière BYOMA SARL, une équipe de professionnels passionnés et dévoués. Chaque membre apporte une expertise unique 
+              dans le négoce, l'énergie ou l'immobilier. Ensemble, nous travaillons pour vous offrir 
+              des solutions adaptées et innovantes.
             </p>
           </div>
 

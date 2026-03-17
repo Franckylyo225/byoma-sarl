@@ -1,10 +1,7 @@
 import { 
-  TreePine, 
-  Map, 
+  ShoppingCart, 
+  Fuel, 
   Building2, 
-  Compass, 
-  Globe, 
-  Monitor,
   ArrowRight 
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -13,46 +10,25 @@ import { useScrollReveal, useScrollRevealMultiple } from "@/hooks/useScrollRevea
 
 const services = [
   {
-    icon: Map,
-    title: "Aménagement Foncier",
-    description: "Conseils en urbanisme, gestion de projets de lotissement et valorisation optimale de vos terrains.",
-    features: ["Lotissement", "Urbanisme", "Valorisation"],
-    href: "/services/amenagement-foncier",
+    icon: ShoppingCart,
+    title: "Négoce",
+    description: "Activités de négoce diversifiées dans plusieurs secteurs stratégiques à forte valeur ajoutée, avec un réseau de partenaires solides.",
+    features: ["Commerce", "Import-Export", "Distribution"],
+    href: "/services/negoce",
   },
   {
-    icon: TreePine,
-    title: "Aménagement Forestier",
-    description: "Gestion durable des forêts, reboisement et préservation de la biodiversité pour un avenir vert.",
-    features: ["Reboisement", "Biodiversité", "Exploitation durable"],
-    href: "/services/amenagement-forestier",
+    icon: Fuel,
+    title: "Distribution des produits pétroliers et gaziers",
+    description: "Distribution fiable et durable de produits pétroliers et gaziers, avec une logistique optimisée pour répondre aux besoins du marché.",
+    features: ["Produits pétroliers", "Gaz", "Logistique"],
+    href: "/services/distribution-petroliere",
   },
   {
     icon: Building2,
-    title: "Bâtiment & Travaux Publics",
-    description: "Construction et réhabilitation de bâtiments, infrastructures de qualité pour vos projets.",
-    features: ["Construction", "Réhabilitation", "Infrastructure"],
-    href: "/services/btp",
-  },
-  {
-    icon: Compass,
-    title: "Topographie",
-    description: "Relevés topographiques précis, calculs de surface et modélisation géométrique avancée.",
-    features: ["Relevés", "Calculs", "Modélisation"],
-    href: "/services/topographie",
-  },
-  {
-    icon: Globe,
-    title: "Géomatique",
-    description: "Analyse de données géographiques et conception de systèmes d'information géographiques (SIG).",
-    features: ["Bases de données", "SIG", "Cartographie"],
-    href: "/services/geomatique",
-  },
-  {
-    icon: Monitor,
-    title: "Informatique",
-    description: "Développement web, maintenance informatique et fourniture de matériels de qualité.",
-    features: ["Sites web", "Maintenance", "Équipements"],
-    href: "/services/informatique",
+    title: "Promotion et gestion immobilière",
+    description: "Promotion et gestion de biens immobiliers de qualité, alliant confort, élégance et durabilité pour une expérience unique.",
+    features: ["Promotion", "Gestion locative", "Investissement"],
+    href: "/services/immobilier",
   },
 ];
 
@@ -74,11 +50,11 @@ export function Services() {
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
             Des solutions complètes pour vos{" "}
-            <span className="text-primary-foreground">projets d'aménagement</span>
+            <span className="text-primary-foreground">projets stratégiques</span>
           </h2>
           <p className="text-primary-foreground/80 text-lg">
-            Découvrez notre gamme complète de services professionnels, 
-            conçus pour répondre à tous vos besoins en aménagement foncier et forestier.
+            L'expérience du confort et de l'élégance. Découvrez nos services 
+            dans les secteurs de l'énergie, du commerce et de l'immobilier.
           </p>
         </div>
 
@@ -137,7 +113,7 @@ export function Services() {
         >
           <Link to="/contact">
             <Button variant="hero" size="lg">
-              Demander un devis gratuit
+              Nous contacter
               <ArrowRight className="w-5 h-5" />
             </Button>
           </Link>

@@ -25,40 +25,40 @@ interface HeroSlide {
 const fallbackSlides: HeroSlide[] = [
   {
     id: "1",
-    badge: "Notre vision",
-    headline: "Aménager aujourd'hui,",
-    highlight: "préserver demain",
-    description: "Votre partenaire de confiance pour un aménagement durable des terres et forêts. Nous transformons vos espaces en opportunités durables.",
+    badge: "FILIALE DE BYOMA GROUP",
+    headline: "Un partenaire multisectoriel,",
+    highlight: "engagé pour vous",
+    description: "BYOMA SARL, un partenaire multisectoriel engagé pour des solutions fiables et durables.",
     image_url: heroForestRoad,
     button_text: "Découvrir nos services",
     button_link: "#services",
   },
   {
     id: "2",
-    badge: "Notre expertise",
-    headline: "Leader en",
-    highlight: "aménagement foncier",
-    description: "10 ans d'expérience dans la valorisation et la transformation des espaces fonciers en Côte d'Ivoire. Lotissement, urbanisme et conseil expert.",
+    badge: "Négoce",
+    headline: "L'expérience du",
+    highlight: "confort et de l'élégance",
+    description: "Opérant dans plusieurs secteurs stratégiques à forte valeur ajoutée pour anticiper les besoins du marché.",
     image_url: heroLandPlot,
     button_text: "Découvrir nos services",
     button_link: "#services",
   },
   {
     id: "3",
-    badge: "Notre savoir-faire",
-    headline: "Expertise forestière",
-    highlight: "reconnue",
-    description: "Gestion durable des forêts, reboisement et préservation de la biodiversité. Partenaire de confiance du Ministère des Eaux et Forêts.",
+    badge: "Énergie",
+    headline: "Distribution de produits",
+    highlight: "pétroliers et gaziers",
+    description: "Une vision orientée vers la performance et la durabilité dans le secteur énergétique.",
     image_url: heroDrone,
     button_text: "Découvrir nos services",
     button_link: "#services",
   },
   {
     id: "4",
-    badge: "Notre engagement",
-    headline: "Innovation &",
-    highlight: "développement durable",
-    description: "Nous allions technologies modernes et respect de l'environnement pour des solutions pérennes qui profitent aux générations futures.",
+    badge: "Immobilier",
+    headline: "Promotion &",
+    highlight: "gestion immobilière",
+    description: "Intervenir efficacement dans l'immobilier avec des solutions fiables et durables.",
     image_url: heroInnovation,
     button_text: "Découvrir nos services",
     button_link: "#services",
@@ -131,11 +131,9 @@ export function Hero() {
   // Get image URL (handle both local imports and remote URLs)
   const getImageUrl = (imageUrl: string | null): string => {
     if (!imageUrl) return heroForestRoad;
-    // If it starts with http or blob, it's a remote URL
     if (imageUrl.startsWith('http') || imageUrl.startsWith('blob')) {
       return imageUrl;
     }
-    // Otherwise it's a local import (fallback)
     return imageUrl;
   };
 
@@ -260,7 +258,6 @@ export function Hero() {
 
       {/* Bottom navigation */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-6 z-20">
-        {/* Arrows */}
         <button
           onClick={prevSlide}
           className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all duration-300"
@@ -269,7 +266,6 @@ export function Hero() {
           <ChevronLeft className="w-5 h-5" />
         </button>
 
-        {/* Dots */}
         <div className="flex items-center gap-3">
           {slides.map((_, index) => (
             <button

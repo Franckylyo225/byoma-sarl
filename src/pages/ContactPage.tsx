@@ -16,19 +16,19 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Adresse",
-    content: "Cocody Angré, Dokui Djomi",
-    detail: "11 BP 2917 Abidjan 17",
+    content: "Cocody plateau Dokui, SOPIM",
+    detail: "05 BP 3320 Abidjan 05",
   },
   {
     icon: Phone,
     title: "Téléphone",
-    content: "+225 07 68 08 71 01",
+    content: "27 22 25 15 44 / 07 16 34 29 01",
     detail: "Du lundi au vendredi",
   },
   {
     icon: Mail,
     title: "Email",
-    content: "info@ane.ci",
+    content: "info@byoma.ci",
     detail: "Réponse sous 24h",
   },
   {
@@ -54,7 +54,6 @@ export default function ContactPage() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
     toast({
@@ -87,7 +86,7 @@ export default function ContactPage() {
               Parlons de votre projet
             </h1>
             <p className="text-primary-foreground/80 text-lg md:text-xl">
-              Vous avez un projet d'aménagement ? Contactez-nous pour une étude personnalisée et un devis gratuit.
+              Vous avez un projet ? Contactez BYOMA SARL pour des solutions adaptées à vos besoins.
             </p>
           </div>
         </div>
@@ -125,7 +124,7 @@ export default function ContactPage() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Localisation ANE SARL"
+                  title="Localisation BYOMA SARL"
                 />
               </div>
             </div>
@@ -137,7 +136,7 @@ export default function ContactPage() {
                 className="bg-card rounded-2xl shadow-premium p-8"
               >
                 <h3 className="font-display text-2xl font-bold text-foreground mb-6">
-                  Demande de devis gratuit
+                  Demande de renseignements
                 </h3>
 
                 <div className="grid md:grid-cols-2 gap-6 mb-6">
@@ -196,12 +195,9 @@ export default function ContactPage() {
                       className="w-full px-4 py-3 bg-secondary border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                     >
                       <option value="">Sélectionnez un service</option>
-                      <option value="foncier">Aménagement Foncier</option>
-                      <option value="forestier">Aménagement Forestier</option>
-                      <option value="btp">Bâtiment & Travaux Publics</option>
-                      <option value="topographie">Topographie</option>
-                      <option value="geomatique">Géomatique</option>
-                      <option value="informatique">Informatique</option>
+                      <option value="negoce">Négoce</option>
+                      <option value="distribution">Distribution pétrolière et gazière</option>
+                      <option value="immobilier">Promotion et gestion immobilière</option>
                     </select>
                   </div>
                 </div>
