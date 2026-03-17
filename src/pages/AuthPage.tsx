@@ -9,7 +9,7 @@ import { useToast } from '@/hooks/use-toast';
 import { z } from 'zod';
 import { Loader2, ArrowLeft, TreePine, Shield, Users } from 'lucide-react';
 import heroForestRoad from '@/assets/hero-forest-road.jpg';
-import logoAneFull from '@/assets/logo-ane-full.png';
+import logoByoma from '@/assets/logo-byoma.png';
 
 const authSchema = z.object({
   email: z.string().email('Email invalide'),
