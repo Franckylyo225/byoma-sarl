@@ -57,7 +57,7 @@ export default function AmenagementForestierPage() {
                 Préserver et valoriser le patrimoine forestier
               </h2>
               <p className="text-muted-foreground text-lg mb-6">
-                ANE SARL est un acteur majeur de l'aménagement forestier en Côte d'Ivoire. 
+                BYOMA SARL est un acteur majeur de l'aménagement forestier en Côte d'Ivoire. 
                 Notre expertise dans la délimitation des forêts classées et la gestion durable 
                 des ressources forestières nous positionne comme un partenaire de confiance.
               </p>
@@ -73,7 +73,7 @@ export default function AmenagementForestierPage() {
               </Link>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-premium">
-              <img src={serviceForestier} alt="Équipe ANE SARL en intervention forestière" className="w-full h-full object-cover" />
+              <img src={serviceForestier} alt="Équipe BYOMA SARL en intervention forestière" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>

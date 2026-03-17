@@ -74,7 +74,7 @@ export default function AmenagementFoncierPage() {
               </Link>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-premium">
-              <img src={serviceAmenagement} alt="Équipe ANE SARL sur le terrain avec équipement topographique" className="w-full h-full object-cover" />
+              <img src={serviceAmenagement} alt="Équipe BYOMA SARL sur le terrain avec équipement topographique" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>

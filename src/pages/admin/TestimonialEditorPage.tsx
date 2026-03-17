@@ -284,7 +284,7 @@ export default function TestimonialEditorPage() {
             id="content"
             value={formData.content}
             onChange={(e) => setFormData(prev => ({ ...prev, content: e.target.value }))}
-            placeholder="ANE SARL a démontré un professionnalisme exemplaire..."
+            placeholder="BYOMA SARL a démontré un professionnalisme exemplaire..."
             rows={4}
             required
           />
