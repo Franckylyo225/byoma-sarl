@@ -5,10 +5,10 @@ import { supabase } from "@/integrations/supabase/client";
 import { Link } from "react-router-dom";
 
 // Import fallback images
-import heroForestRoad from "@/assets/hero-forest-road.jpg";
-import heroLandPlot from "@/assets/hero-land-plot.jpg";
-import heroDrone from "@/assets/hero-drone.jpg";
-import heroInnovation from "@/assets/hero-innovation.jpg";
+import heroCity from "@/assets/hero-byoma-city.jpg";
+import heroNegoce from "@/assets/service-negoce.jpg";
+import heroDistribution from "@/assets/service-distribution.jpg";
+import heroImmobilier from "@/assets/service-immobilier.jpg";
 
 interface HeroSlide {
   id: string;
