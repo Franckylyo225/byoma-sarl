@@ -1,114 +1,138 @@
 import { Button } from "@/components/ui/button";
-import { Award, Users, Target, ArrowRight } from "lucide-react";
-import aboutImage from "@/assets/about-ane.png";
-import { useScrollReveal, useScrollRevealMultiple } from "@/hooks/useScrollReveal";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+import aboutImg1 from "@/assets/about-byoma.jpg";
+import aboutImg2 from "@/assets/about-byoma-2.jpg";
+import aboutImg3 from "@/assets/about-byoma-3.jpg";
 
-const values = [
+const pillars = [
   {
-    icon: Award,
-    title: "Performance",
-    description: "Une vision orientée vers la performance et la durabilité dans chacun de nos secteurs d'activité.",
+    title: "Notre Mission",
+    description: "Proposer des solutions fiables et durables dans les secteurs stratégiques, en plaçant la performance et la satisfaction client au cœur de notre engagement.",
   },
   {
-    icon: Users,
-    title: "Partenariats",
-    description: "Des partenariats solides pour intervenir efficacement dans l'énergie, l'immobilier et le commerce.",
+    title: "Notre Vision",
+    description: "Devenir un acteur de référence en Côte d'Ivoire et en Afrique de l'Ouest, reconnu pour l'excellence de ses services et la solidité de ses partenariats.",
   },
   {
-    icon: Target,
-    title: "Diversification",
-    description: "Un modèle de croissance diversifié opérant dans plusieurs secteurs stratégiques à forte valeur ajoutée.",
+    title: "Nos Valeurs",
+    description: "Intégrité, professionnalisme et engagement responsable guident chacune de nos actions pour dépasser les attentes de nos clients et partenaires.",
   },
 ];
 
 export function About() {
-  const imageReveal = useScrollReveal({ threshold: 0.2 });
-  const contentReveal = useScrollReveal({ threshold: 0.2 });
-  const { setRef, visibleItems } = useScrollRevealMultiple(values.length, { threshold: 0.2 });
+  const leftReveal = useScrollReveal({ threshold: 0.2 });
+  const rightReveal = useScrollReveal({ threshold: 0.2 });
 
   return (
-    <section id="apropos" className="section-padding bg-secondary relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-copper/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-72 h-72 bg-muted/50 rounded-full blur-3xl" />
-
-      <div className="container-custom relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
-          {/* Image */}
-          <div 
-            ref={imageReveal.ref}
-            className={`relative order-2 lg:order-1 scroll-reveal-left ${imageReveal.isVisible ? "visible" : ""}`}
+    <section id="apropos" className="section-padding bg-background">
+      <div className="container-custom">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          {/* Left - Text */}
+          <div
+            ref={leftReveal.ref}
+            className={`scroll-reveal ${leftReveal.isVisible ? "visible" : ""}`}
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-premium-lg">
-              <img
-                src={aboutImage}
-                alt="BYOMA SARL"
-                className="w-full h-[500px] object-cover object-top"
-              />
-              {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
+            <div className="inline-flex items-center gap-2 mb-6">
+              <span className="w-8 h-px bg-accent" />
+              <span className="text-sm font-medium tracking-[0.2em] uppercase text-accent">
+                À propos
+              </span>
             </div>
-            {/* Decorative frame */}
-            <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-copper/30 rounded-2xl -z-10" />
-            {/* Stats badge */}
-            <div className="absolute -bottom-6 -left-6 bg-copper text-primary-foreground px-6 py-4 rounded-xl shadow-premium">
-              <div className="text-3xl font-bold font-display">2023</div>
-              <div className="text-sm opacity-90">Année de création</div>
-            </div>
-          </div>
 
-          {/* Content */}
-          <div 
-            ref={contentReveal.ref}
-            className={`order-1 lg:order-2 scroll-reveal-right ${contentReveal.isVisible ? "visible" : ""}`}
-          >
-            <span className="inline-block text-copper font-semibold text-sm uppercase tracking-widest mb-4">
-              À propos de nous
-            </span>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Partenaire multisectoriel,{" "}
-              <span className="text-primary">solutions fiables et durables</span>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8 leading-tight">
+              Des solutions innovantes,{" "}
+              <span className="text-accent italic">ensemble.</span>
             </h2>
+
             <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-              BYOMA SARL, filiale de BYOMA GROUP, créée en octobre 2023, est une entreprise 
-              à modèle de croissance diversifié, opérant dans plusieurs secteurs stratégiques 
+              BYOMA SARL, filiale de BYOMA GROUP, créée en octobre 2023, est une entreprise
+              à modèle de croissance diversifié, opérant dans plusieurs secteurs stratégiques
               à forte valeur ajoutée.
             </p>
-            <p className="text-muted-foreground mb-8 leading-relaxed">
-              Grâce à une gouvernance rigoureuse et à des partenariats solides, BYOMA SARL se 
-              positionne comme un acteur dynamique et structuré, capable d'intervenir efficacement 
-              aussi bien dans les secteurs énergétiques que dans l'immobilier, le commerce et l'événementiel.
+            <p className="text-muted-foreground mb-10 leading-relaxed">
+              Grâce à une gouvernance rigoureuse et à des partenariats solides, BYOMA SARL se
+              positionne comme un acteur dynamique et structuré, capable d'intervenir efficacement
+              aussi bien dans les secteurs énergétiques que dans l'immobilier et le commerce.
             </p>
 
-            <Button variant="premium" size="lg">
-              Découvrir notre histoire
-              <ArrowRight className="w-5 h-5" />
-            </Button>
-          </div>
-        </div>
+            <Link to="/a-propos">
+              <Button className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold px-6">
+                En savoir plus
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </Link>
 
-        {/* Values - Now at the bottom */}
-        <div className="grid md:grid-cols-3 gap-6">
-          {values.map((value, index) => (
-            <div
-              key={index}
-              ref={setRef(index)}
-              className={`bg-card backdrop-blur-sm border border-border rounded-xl p-6 hover:border-copper/30 transition-all duration-300 shadow-premium group scroll-reveal ${
-                visibleItems[index] ? "visible" : ""
-              }`}
-              style={{ transitionDelay: `${index * 150}ms` }}
-            >
-              <div className="flex items-start gap-4">
-                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-copper/20 transition-colors">
-                  <value.icon className="w-7 h-7 text-primary group-hover:text-copper transition-colors" />
+            {/* Mission/Vision/Values */}
+            <div className="mt-12 space-y-6">
+              {pillars.map((pillar, idx) => (
+                <div key={idx} className="border-l-2 border-accent/30 pl-6">
+                  <h4 className="font-display text-lg font-bold text-foreground mb-1">
+                    {pillar.title}
+                  </h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {pillar.description}
+                  </p>
                 </div>
-                <div>
-                  <h3 className="font-display text-xl font-bold text-foreground mb-2">{value.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{value.description}</p>
-                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right - Images grid */}
+          <div
+            ref={rightReveal.ref}
+            className={`scroll-reveal-right ${rightReveal.isVisible ? "visible" : ""}`}
+          >
+            <div className="grid grid-cols-2 gap-4">
+              <div className="col-span-2">
+                <img
+                  src={aboutImg1}
+                  alt="Bureaux BYOMA"
+                  className="w-full h-64 object-cover rounded-2xl"
+                  loading="lazy"
+                  width={1200}
+                  height={800}
+                />
+              </div>
+              <div>
+                <img
+                  src={aboutImg2}
+                  alt="Projets immobiliers BYOMA"
+                  className="w-full h-48 object-cover rounded-2xl"
+                  loading="lazy"
+                  width={800}
+                  height={1000}
+                />
+              </div>
+              <div>
+                <img
+                  src={aboutImg3}
+                  alt="Secteur énergétique BYOMA"
+                  className="w-full h-48 object-cover rounded-2xl"
+                  loading="lazy"
+                  width={800}
+                  height={600}
+                />
               </div>
             </div>
-          ))}
+
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-4 mt-6">
+              <div className="text-center p-4 bg-primary rounded-xl">
+                <div className="text-3xl font-display font-bold text-accent">50+</div>
+                <div className="text-xs text-primary-foreground/60 uppercase tracking-wider mt-1">Projets livrés</div>
+              </div>
+              <div className="text-center p-4 bg-primary rounded-xl">
+                <div className="text-3xl font-display font-bold text-accent">3</div>
+                <div className="text-xs text-primary-foreground/60 uppercase tracking-wider mt-1">Secteurs</div>
+              </div>
+              <div className="text-center p-4 bg-primary rounded-xl">
+                <div className="text-3xl font-display font-bold text-accent">100%</div>
+                <div className="text-xs text-primary-foreground/60 uppercase tracking-wider mt-1">Satisfaction</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,12 +1,12 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { TrustBadges } from "@/components/TrustBadges";
-import { Services } from "@/components/Services";
-import { Projects } from "@/components/Projects";
 import { About } from "@/components/About";
+import { Services } from "@/components/Services";
 import { WhyByoma } from "@/components/WhyByoma";
-import { Testimonials } from "@/components/Testimonials";
+import { Projects } from "@/components/Projects";
 import { News } from "@/components/News";
+import { Testimonials } from "@/components/Testimonials";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 
@@ -18,8 +18,8 @@ const Index = () => {
         <Hero />
         <TrustBadges />
         <About />
-        <WhyByoma />
         <Services />
+        <WhyByoma />
         <Projects />
         <News />
         <Testimonials />

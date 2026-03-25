@@ -1,11 +1,10 @@
 import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { Link } from "react-router-dom";
 
-// Import fallback images
-import heroCity from "@/assets/hero-byoma-city.jpg";
+import heroMain from "@/assets/hero-byoma-main.jpg";
 import heroNegoce from "@/assets/service-negoce.jpg";
 import heroDistribution from "@/assets/service-distribution.jpg";
 import heroImmobilier from "@/assets/service-immobilier.jpg";
@@ -21,57 +20,60 @@ interface HeroSlide {
   button_link: string | null;
 }
 
-// Fallback static slides in case DB is empty
 const fallbackSlides: HeroSlide[] = [
   {
     id: "1",
-    badge: "FILIALE DE BYOMA GROUP",
-    headline: "Un partenaire multisectoriel,",
-    highlight: "engagé pour vous",
-    description: "BYOMA SARL, un partenaire multisectoriel engagé pour des solutions fiables et durables.",
-    image_url: heroCity,
+    badge: "Filiale de BYOMA GROUP",
+    headline: "Bâtir l'avenir,",
+    highlight: "ensemble.",
+    description: "Un partenaire multisectoriel engagé pour des solutions fiables et durables en Côte d'Ivoire.",
+    image_url: heroMain,
     button_text: "Découvrir nos services",
     button_link: "#services",
   },
   {
     id: "2",
-    badge: "Négoce",
-    headline: "L'expérience du",
-    highlight: "confort et de l'élégance",
-    description: "Opérant dans plusieurs secteurs stratégiques à forte valeur ajoutée pour anticiper les besoins du marché.",
+    badge: "Négoce international",
+    headline: "Le commerce,",
+    highlight: "sans frontières.",
+    description: "Import-export stratégique dans des secteurs à forte valeur ajoutée, avec un réseau de partenaires fiables.",
     image_url: heroNegoce,
-    button_text: "Découvrir nos services",
-    button_link: "#services",
+    button_text: "En savoir plus",
+    button_link: "/services/negoce",
   },
   {
     id: "3",
     badge: "Énergie",
-    headline: "Distribution de produits",
-    highlight: "pétroliers et gaziers",
-    description: "Une vision orientée vers la performance et la durabilité dans le secteur énergétique.",
+    headline: "L'énergie qui",
+    highlight: "fait avancer.",
+    description: "Distribution fiable de produits pétroliers et gaziers pour accompagner la croissance économique.",
     image_url: heroDistribution,
-    button_text: "Découvrir nos services",
-    button_link: "#services",
+    button_text: "En savoir plus",
+    button_link: "/services/distribution-petroliere",
   },
   {
     id: "4",
     badge: "Immobilier",
-    headline: "Promotion &",
-    highlight: "gestion immobilière",
-    description: "Intervenir efficacement dans l'immobilier avec des solutions fiables et durables.",
+    headline: "L'immobilier",
+    highlight: "d'exception.",
+    description: "Promotion et gestion de biens immobiliers alliant confort, élégance et durabilité.",
     image_url: heroImmobilier,
-    button_text: "Découvrir nos services",
-    button_link: "#services",
+    button_text: "En savoir plus",
+    button_link: "/services/immobilier",
   },
+];
+
+const stats = [
+  { value: "3", label: "Secteurs d'activité" },
+  { value: "2023", label: "Année de création" },
+  { value: "100%", label: "Engagement client" },
 ];
 
 export function Hero() {
   const [slides, setSlides] = useState<HeroSlide[]>(fallbackSlides);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
 
-  // Fetch slides from database
   useEffect(() => {
     const fetchSlides = async () => {
       try {
@@ -80,25 +82,12 @@ export function Hero() {
           .select('id, badge, headline, highlight, description, image_url, button_text, button_link')
           .eq('is_active', true)
           .order('display_order', { ascending: true });
-
-        if (!error && data && data.length > 0) {
-          setSlides(data);
-        }
+        if (!error && data && data.length > 0) setSlides(data);
       } catch (err) {
         console.error('Error fetching hero slides:', err);
       }
     };
-
     fetchSlides();
-  }, []);
-
-  // Parallax scroll effect
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const nextSlide = useCallback(() => {
@@ -115,31 +104,19 @@ export function Hero() {
     setTimeout(() => setIsAnimating(false), 800);
   }, [isAnimating, slides.length]);
 
-  const goToSlide = (index: number) => {
-    if (isAnimating || index === currentSlide) return;
-    setIsAnimating(true);
-    setCurrentSlide(index);
-    setTimeout(() => setIsAnimating(false), 800);
-  };
-
-  // Auto-play
   useEffect(() => {
-    const interval = setInterval(nextSlide, 6000);
+    const interval = setInterval(nextSlide, 7000);
     return () => clearInterval(interval);
   }, [nextSlide]);
 
-  // Get image URL (handle both local imports and remote URLs)
   const getImageUrl = (imageUrl: string | null): string => {
-    if (!imageUrl) return heroCity;
-    if (imageUrl.startsWith('http') || imageUrl.startsWith('blob')) {
-      return imageUrl;
-    }
+    if (!imageUrl) return heroMain;
     return imageUrl;
   };
 
   return (
-    <section id="accueil" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Images with crossfade and parallax */}
+    <section className="relative h-screen min-h-[700px] flex items-end overflow-hidden">
+      {/* Background */}
       {slides.map((slide, index) => (
         <div
           key={slide.id}
@@ -149,155 +126,118 @@ export function Hero() {
         >
           <img
             src={getImageUrl(slide.image_url)}
-            alt={`${slide.headline} ${slide.highlight || ''}`}
-            className="w-full h-[120%] object-cover"
-            style={{
-              transform: `translateY(${scrollY * 0.3}px) scale(${index === currentSlide ? 1.05 : 1})`,
-              transition: "transform 0.1s linear",
-            }}
+            alt={slide.headline}
+            className="w-full h-full object-cover scale-105"
           />
         </div>
       ))}
-      
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
 
-      {/* Slide indicator lines */}
-      <div className="absolute left-8 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-4 z-20">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className="group flex items-center gap-3"
-            aria-label={`Slide ${index + 1}`}
-          >
-            <div
-              className={`h-0.5 transition-all duration-500 ${
-                index === currentSlide
-                  ? "w-12 bg-primary"
-                  : "w-6 bg-white/30 group-hover:bg-white/50"
-              }`}
-            />
-            <span
-              className={`text-xs font-medium transition-all duration-300 ${
-                index === currentSlide
-                  ? "text-primary opacity-100"
-                  : "text-white/50 opacity-0 group-hover:opacity-100"
-              }`}
-            >
-              0{index + 1}
-            </span>
-          </button>
-        ))}
-      </div>
+      {/* Overlays */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,50%,10%)]/90 via-[hsl(220,50%,10%)]/60 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,50%,10%)] via-transparent to-[hsl(220,50%,10%)]/30" />
 
-      <div className="container-custom relative z-10 py-20 lg:py-0">
-        {/* Content Slider */}
-        <div className="max-w-3xl">
-          {slides.map((slide, index) => (
-            <div
-              key={slide.id}
-              className={`transition-all duration-700 ${
-                index === currentSlide
-                  ? "opacity-100 translate-y-0 relative"
-                  : "opacity-0 translate-y-8 absolute inset-0 pointer-events-none"
-              }`}
-            >
-              {/* Badge */}
-              {slide.badge && (
-                <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
-                  <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                  <span className="text-sm font-medium tracking-wider uppercase text-white">{slide.badge}</span>
-                </div>
-              )}
-
-              {/* Headline */}
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 text-white">
-                {slide.headline}{" "}
-                {slide.highlight && (
-                  <span className="text-primary block mt-2">{slide.highlight}</span>
+      {/* Content */}
+      <div className="container-custom relative z-10 pb-24 lg:pb-32">
+        <div className="grid lg:grid-cols-3 gap-12 items-end">
+          {/* Main text */}
+          <div className="lg:col-span-2">
+            {slides.map((slide, index) => (
+              <div
+                key={slide.id}
+                className={`transition-all duration-700 ${
+                  index === currentSlide
+                    ? "opacity-100 translate-y-0 relative"
+                    : "opacity-0 translate-y-8 absolute inset-0 pointer-events-none"
+                }`}
+              >
+                {slide.badge && (
+                  <div className="inline-flex items-center gap-2 mb-6">
+                    <span className="w-8 h-px bg-accent" />
+                    <span className="text-sm font-medium tracking-[0.2em] uppercase text-accent">
+                      {slide.badge}
+                    </span>
+                  </div>
                 )}
-              </h1>
 
-              {/* Description */}
-              {slide.description && (
-                <p className="text-lg md:text-xl text-white/80 mb-10 leading-relaxed">
-                  {slide.description}
-                </p>
-              )}
+                <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 text-white">
+                  {slide.headline}
+                  {slide.highlight && (
+                    <span className="text-accent italic block">{slide.highlight}</span>
+                  )}
+                </h1>
 
-              {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                {slide.button_link?.startsWith('#') ? (
-                  <Button variant="hero" size="xl" asChild>
-                    <a href={slide.button_link}>
-                      {slide.button_text || 'Découvrir nos services'}
-                      <ArrowRight className="w-5 h-5" />
-                    </a>
-                  </Button>
-                ) : (
-                  <Button variant="hero" size="xl" asChild>
-                    <Link to={slide.button_link || '#services'}>
-                      {slide.button_text || 'Découvrir nos services'}
-                      <ArrowRight className="w-5 h-5" />
+                {slide.description && (
+                  <p className="text-lg text-white/70 mb-8 max-w-xl leading-relaxed">
+                    {slide.description}
+                  </p>
+                )}
+
+                <div className="flex flex-wrap gap-4">
+                  {slide.button_link?.startsWith('#') ? (
+                    <Button variant="hero" size="xl" asChild>
+                      <a href={slide.button_link}>
+                        {slide.button_text || 'Découvrir'}
+                        <ArrowRight className="w-5 h-5" />
+                      </a>
+                    </Button>
+                  ) : (
+                    <Button variant="hero" size="xl" asChild>
+                      <Link to={slide.button_link || '#services'}>
+                        {slide.button_text || 'Découvrir'}
+                        <ArrowRight className="w-5 h-5" />
+                      </Link>
+                    </Button>
+                  )}
+                  <Button variant="hero-outline" size="xl" asChild>
+                    <Link to="/a-propos">
+                      En savoir plus
                     </Link>
                   </Button>
-                )}
-                <Button variant="hero-outline" size="xl" asChild>
-                  <Link to="/projets">
-                    <Play className="w-5 h-5" />
-                    Voir nos réalisations
-                  </Link>
-                </Button>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* Stats sidebar */}
+          <div className="hidden lg:flex flex-col gap-8 border-l border-white/10 pl-8">
+            {stats.map((stat, idx) => (
+              <div key={idx}>
+                <div className="text-4xl font-display font-bold text-accent">{stat.value}</div>
+                <div className="text-sm text-white/50 uppercase tracking-wider mt-1">{stat.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* Bottom navigation */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-6 z-20">
-        <button
-          onClick={prevSlide}
-          className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all duration-300"
-          aria-label="Slide précédente"
-        >
-          <ChevronLeft className="w-5 h-5" />
-        </button>
-
-        <div className="flex items-center gap-3">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`transition-all duration-500 ${
-                index === currentSlide
-                  ? "w-8 h-2 bg-primary rounded-full"
-                  : "w-2 h-2 bg-white/30 rounded-full hover:bg-white/50"
-              }`}
-              aria-label={`Aller à la slide ${index + 1}`}
+        {/* Navigation */}
+        <div className="flex items-center gap-4 mt-12">
+          <button
+            onClick={prevSlide}
+            className="w-12 h-12 border border-white/20 flex items-center justify-center text-white hover:bg-accent hover:border-accent hover:text-accent-foreground transition-all"
+            aria-label="Précédent"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <div className="flex items-center gap-1 text-sm text-white/50 font-medium">
+            <span className="text-white text-lg">0{currentSlide + 1}</span>
+            <span className="mx-2">/</span>
+            <span>0{slides.length}</span>
+          </div>
+          <button
+            onClick={nextSlide}
+            className="w-12 h-12 border border-white/20 flex items-center justify-center text-white hover:bg-accent hover:border-accent hover:text-accent-foreground transition-all"
+            aria-label="Suivant"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+          {/* Progress */}
+          <div className="flex-1 h-px bg-white/10 ml-4">
+            <div
+              className="h-full bg-accent transition-all duration-500"
+              style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
             />
-          ))}
+          </div>
         </div>
-
-        <button
-          onClick={nextSlide}
-          className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all duration-300"
-          aria-label="Slide suivante"
-        >
-          <ChevronRight className="w-5 h-5" />
-        </button>
-      </div>
-
-      {/* Progress bar */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/10">
-        <div
-          className="h-full bg-primary transition-all duration-300"
-          style={{
-            width: `${((currentSlide + 1) / slides.length) * 100}%`,
-          }}
-        />
       </div>
     </section>
   );
