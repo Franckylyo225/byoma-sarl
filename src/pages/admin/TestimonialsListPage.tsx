@@ -426,7 +426,7 @@ export default function TestimonialsListPage() {
                       </p>
                       <div className="flex gap-0.5 mt-1">
                         {[...Array(testimonial.rating || 5)].map((_, i) => (
-                          <Star key={i} className="w-3 h-3 fill-copper text-copper" />
+                          <Star key={i} className="w-3 h-3 fill-copper text-accent" />
                         ))}
                       </div>
                     </div>

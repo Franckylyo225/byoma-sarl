@@ -55,7 +55,7 @@ export function Testimonials() {
           ref={headerReveal.ref}
           className={`text-center max-w-3xl mx-auto mb-16 scroll-reveal ${headerReveal.isVisible ? "visible" : ""}`}
         >
-          <span className="inline-block text-copper font-semibold text-sm uppercase tracking-widest mb-4">
+          <span className="inline-block text-accent font-semibold text-sm uppercase tracking-widest mb-4">
             Témoignages
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
@@ -77,9 +77,9 @@ export function Testimonials() {
               <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
             </div>
           ) : (
-            <div className="relative bg-card rounded-2xl shadow-premium-lg p-8 md:p-12">
+            <div className="relative bg-card rounded-2xl shadow-lg p-8 md:p-12">
               {/* Quote icon */}
-              <div className="absolute -top-6 left-8 w-12 h-12 bg-copper rounded-xl flex items-center justify-center shadow-lg">
+              <div className="absolute -top-6 left-8 w-12 h-12 bg-accent rounded-xl flex items-center justify-center shadow-lg">
                 <Quote className="w-6 h-6 text-accent-foreground" />
               </div>
 
@@ -88,7 +88,7 @@ export function Testimonials() {
                 {/* Rating */}
                 <div className="flex gap-1 mb-6">
                   {[...Array(testimonials[currentIndex]?.rating || 5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-copper text-copper" />
+                    <Star key={i} className="w-5 h-5 fill-copper text-accent" />
                   ))}
                 </div>
 
@@ -103,10 +103,10 @@ export function Testimonials() {
                     <img
                       src={testimonials[currentIndex].image_url!}
                       alt={testimonials[currentIndex].author}
-                      className="w-14 h-14 rounded-full object-cover ring-2 ring-copper/20"
+                      className="w-14 h-14 rounded-full object-cover ring-2 ring-accent/20"
                     />
                   ) : (
-                    <div className="w-14 h-14 rounded-full bg-muted flex items-center justify-center ring-2 ring-copper/20">
+                    <div className="w-14 h-14 rounded-full bg-muted flex items-center justify-center ring-2 ring-accent/20">
                       <Quote className="w-6 h-6 text-muted-foreground" />
                     </div>
                   )}
@@ -120,7 +120,7 @@ export function Testimonials() {
                       </div>
                     )}
                     {testimonials[currentIndex]?.organization && (
-                      <div className="text-sm text-copper font-medium">
+                      <div className="text-sm text-accent font-medium">
                         {testimonials[currentIndex].organization}
                       </div>
                     )}
@@ -155,7 +155,7 @@ export function Testimonials() {
                       onClick={() => setCurrentIndex(index)}
                       className={`w-2 h-2 rounded-full transition-all ${
                         index === currentIndex
-                          ? "bg-copper w-6"
+                          ? "bg-accent w-6"
                           : "bg-muted-foreground/30"
                       }`}
                     />

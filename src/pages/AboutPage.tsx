@@ -102,7 +102,7 @@ export default function AboutPage() {
           >
             {/* Image */}
             <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-premium-lg">
+              <div className="relative rounded-2xl overflow-hidden shadow-lg">
                 <img
                   src={aboutImage}
                   alt="Équipe BYOMA SARL"
@@ -110,7 +110,7 @@ export default function AboutPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-copper/30 rounded-2xl -z-10" />
+              <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-accent/30 rounded-2xl -z-10" />
             </div>
 
             {/* Content */}
@@ -186,13 +186,13 @@ export default function AboutPage() {
               <div
                 key={index}
                 ref={setValueRef(index)}
-                className={`bg-card border border-border rounded-2xl p-8 hover:border-copper/30 transition-all duration-300 shadow-premium group text-center scroll-reveal ${
+                className={`bg-card border border-border rounded-2xl p-8 hover:border-accent/30 transition-all duration-300 shadow-md group text-center scroll-reveal ${
                   valuesVisible[index] ? "visible" : ""
                 }`}
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-copper/20 transition-colors">
-                  <value.icon className="w-8 h-8 text-primary group-hover:text-copper transition-colors" />
+                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-accent/20 transition-colors">
+                  <value.icon className="w-8 h-8 text-primary group-hover:text-accent transition-colors" />
                 </div>
                 <h3 className="font-display text-2xl font-bold text-foreground mb-4">{value.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{value.description}</p>
@@ -228,7 +228,7 @@ export default function AboutPage() {
               <div 
                 key={index}
                 ref={setTeamImageRef(index)}
-                className={`relative rounded-2xl overflow-hidden shadow-premium-lg group scroll-reveal ${
+                className={`relative rounded-2xl overflow-hidden shadow-lg group scroll-reveal ${
                   teamImagesVisible[index] ? "visible" : ""
                 }`}
                 style={{ transitionDelay: `${index * 150}ms` }}

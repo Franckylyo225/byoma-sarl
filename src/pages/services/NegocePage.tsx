@@ -77,7 +77,7 @@ export default function NegocePage() {
                 </Button>
               </Link>
             </div>
-            <div className="rounded-2xl overflow-hidden shadow-premium-lg">
+            <div className="rounded-2xl overflow-hidden shadow-lg">
               <img src={serviceNegoce} alt="Activités de négoce — port et conteneurs" className="w-full h-[400px] object-cover" />
             </div>
           </div>

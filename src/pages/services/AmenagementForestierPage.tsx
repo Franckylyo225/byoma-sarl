@@ -72,7 +72,7 @@ export default function AmenagementForestierPage() {
                 </Button>
               </Link>
             </div>
-            <div className="rounded-2xl overflow-hidden shadow-premium">
+            <div className="rounded-2xl overflow-hidden shadow-md">
               <img src={serviceForestier} alt="Équipe BYOMA SARL en intervention forestière" className="w-full h-full object-cover" />
             </div>
           </div>

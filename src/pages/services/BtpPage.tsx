@@ -71,7 +71,7 @@ export default function BtpPage() {
                 </Button>
               </Link>
             </div>
-            <div className="rounded-2xl overflow-hidden shadow-premium">
+            <div className="rounded-2xl overflow-hidden shadow-md">
               <img src={serviceBtp} alt="Techniciens BYOMA SARL avec équipement de mesure sur chantier" className="w-full h-full object-cover" />
             </div>
           </div>

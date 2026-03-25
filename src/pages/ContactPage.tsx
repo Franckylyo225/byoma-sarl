@@ -101,7 +101,7 @@ export default function ContactPage() {
               {contactInfo.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-start gap-4 p-4 bg-card rounded-xl hover:shadow-premium transition-shadow"
+                  className="flex items-start gap-4 p-4 bg-card rounded-xl hover:shadow-md transition-shadow"
                 >
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                     <item.icon className="w-5 h-5 text-primary" />
@@ -133,7 +133,7 @@ export default function ContactPage() {
             <div className="lg:col-span-3">
               <form
                 onSubmit={handleSubmit}
-                className="bg-card rounded-2xl shadow-premium p-8"
+                className="bg-card rounded-2xl shadow-md p-8"
               >
                 <h3 className="font-display text-2xl font-bold text-foreground mb-6">
                   Demande de renseignements
@@ -238,7 +238,7 @@ export default function ContactPage() {
                 </Button>
 
                 <p className="text-center text-sm text-muted-foreground mt-4 flex items-center justify-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-copper" />
+                  <CheckCircle className="w-4 h-4 text-accent" />
                   Réponse garantie sous 24 heures
                 </p>
               </form>

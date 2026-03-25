@@ -227,7 +227,7 @@ export default function ProjectDetailPage() {
             <div className="absolute inset-0 flex items-end">
               <div className="container-custom pb-12">
                 {project.category && (
-                  <span className="inline-block px-4 py-1.5 bg-copper text-accent-foreground text-sm font-semibold rounded-full mb-4">
+                  <span className="inline-block px-4 py-1.5 bg-accent text-accent-foreground text-sm font-semibold rounded-full mb-4">
                     {project.category}
                   </span>
                 )}
@@ -249,7 +249,7 @@ export default function ProjectDetailPage() {
               </Link>
               <div>
                 {project.category && (
-                  <span className="inline-block px-4 py-1.5 bg-copper text-accent-foreground text-sm font-semibold rounded-full mb-4">
+                  <span className="inline-block px-4 py-1.5 bg-accent text-accent-foreground text-sm font-semibold rounded-full mb-4">
                     {project.category}
                   </span>
                 )}
@@ -388,7 +388,7 @@ export default function ProjectDetailPage() {
                 <Link
                   key={proj.id}
                   to={`/projets/${proj.id}`}
-                  className="group bg-card rounded-2xl overflow-hidden shadow-premium card-hover"
+                  className="group bg-card rounded-2xl overflow-hidden shadow-md card-hover"
                 >
                   {/* Image */}
                   <div className="relative h-48 overflow-hidden">
@@ -406,7 +406,7 @@ export default function ProjectDetailPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
                     {proj.category && (
                       <div className="absolute top-4 left-4">
-                        <span className="px-3 py-1 bg-copper text-accent-foreground text-xs font-semibold rounded-full">
+                        <span className="px-3 py-1 bg-accent text-accent-foreground text-xs font-semibold rounded-full">
                           {proj.category}
                         </span>
                       </div>

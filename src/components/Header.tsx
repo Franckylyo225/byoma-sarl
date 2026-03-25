@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone, Mail, MapPin, ChevronDown, Search } from "lucide-react";
+import { Menu, X, Phone, ChevronDown, Search } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { GlobalSearch } from "@/components/GlobalSearch";
 import logoByoma from "@/assets/logo-byoma.png";
@@ -36,15 +36,12 @@ export function Header() {
         setIsSearchOpen(true);
       }
     };
-
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -53,51 +50,33 @@ export function Header() {
 
   return (
     <>
-      {/* Top bar */}
-      <div className="hidden lg:block bg-primary text-primary-foreground py-2">
-        <div className="container-custom flex items-center justify-between text-sm">
-          <div className="flex items-center gap-6">
-            <a href="tel:+2252722251544" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-              <Phone size={14} />
-              <span>27 22 25 15 44</span>
-            </a>
-            <a href="mailto:info@byoma.ci" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-              <Mail size={14} />
-              <span>info@byoma.ci</span>
-            </a>
-          </div>
-          <div className="flex items-center gap-2">
-            <MapPin size={14} />
-            <span>Cocody plateau Dokui, SOPIM, Abidjan</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Main header */}
       <header
         className={cn(
-          "sticky top-0 z-50 transition-all duration-500",
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           isScrolled
-            ? "bg-card/95 backdrop-blur-md shadow-premium py-3"
-            : "bg-transparent py-4"
+            ? "bg-card/95 backdrop-blur-md shadow-md py-3"
+            : "bg-transparent py-5"
         )}
       >
         <div className="container-custom">
           <nav className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center group">
-              <img 
-                src={logoByoma} 
-                alt="BYOMA SARL" 
-                className="h-10 md:h-12 w-auto transition-transform group-hover:scale-105"
+              <img
+                src={logoByoma}
+                alt="BYOMA SARL"
+                className={cn(
+                  "h-10 md:h-12 w-auto transition-all",
+                  !isScrolled && "brightness-0 invert"
+                )}
               />
             </Link>
 
-            {/* Desktop Navigation */}
+            {/* Desktop Nav */}
             <div className="hidden lg:flex items-center gap-8">
-              {navigation.map((item) => (
+              {navigation.map((item) =>
                 item.hasDropdown ? (
-                  <div 
+                  <div
                     key={item.name}
                     className="relative"
                     onMouseEnter={() => setIsServicesHovered(true)}
@@ -105,36 +84,26 @@ export function Header() {
                   >
                     <button
                       className={cn(
-                        "font-medium transition-colors relative group flex items-center gap-1 py-2",
-                        isServicesActive
-                          ? "text-primary"
-                          : "text-foreground/80 hover:text-primary"
+                        "font-medium text-sm tracking-wide uppercase transition-colors flex items-center gap-1 py-2",
+                        isScrolled
+                          ? isServicesActive ? "text-accent" : "text-foreground/80 hover:text-accent"
+                          : isServicesActive ? "text-accent" : "text-white/80 hover:text-accent"
                       )}
                     >
                       {item.name}
-                      <ChevronDown size={16} className={cn(
-                        "transition-transform duration-200",
-                        isServicesHovered && "rotate-180"
-                      )} />
-                      <span className={cn(
-                        "absolute -bottom-1 left-0 h-0.5 bg-copper transition-all duration-300",
-                        isServicesActive || isServicesHovered ? "w-full" : "w-0"
-                      )} />
+                      <ChevronDown size={14} className={cn("transition-transform", isServicesHovered && "rotate-180")} />
                     </button>
-                    
-                    {/* Hover Dropdown */}
+
                     <div className={cn(
-                      "absolute top-full left-0 pt-2 transition-all duration-200",
-                      isServicesHovered 
-                        ? "opacity-100 visible translate-y-0" 
-                        : "opacity-0 invisible -translate-y-2"
+                      "absolute top-full left-0 pt-3 transition-all duration-200",
+                      isServicesHovered ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"
                     )}>
-                      <div className="bg-card border border-border rounded-lg shadow-lg py-2 min-w-56">
+                      <div className="bg-card border border-border rounded-lg shadow-lg py-2 min-w-60">
                         {services.map((service) => (
                           <Link
                             key={service.href}
                             to={service.href}
-                            className="block px-4 py-2.5 text-foreground/80 hover:text-primary hover:bg-muted transition-colors"
+                            className="block px-5 py-3 text-sm text-foreground/80 hover:text-accent hover:bg-muted transition-colors"
                           >
                             {service.name}
                           </Link>
@@ -147,86 +116,78 @@ export function Header() {
                     key={item.name}
                     to={item.href}
                     className={cn(
-                      "font-medium transition-colors relative group",
-                      location.pathname === item.href
-                        ? "text-primary"
-                        : "text-foreground/80 hover:text-primary"
+                      "font-medium text-sm tracking-wide uppercase transition-colors",
+                      isScrolled
+                        ? location.pathname === item.href ? "text-accent" : "text-foreground/80 hover:text-accent"
+                        : location.pathname === item.href ? "text-accent" : "text-white/80 hover:text-accent"
                     )}
                   >
                     {item.name}
-                    <span className={cn(
-                      "absolute -bottom-1 left-0 h-0.5 bg-copper transition-all duration-300",
-                      location.pathname === item.href ? "w-full" : "w-0 group-hover:w-full"
-                    )} />
                   </Link>
                 )
-              ))}
+              )}
             </div>
 
-            {/* Search & CTA Button */}
-            <div className="hidden lg:flex items-center gap-3">
+            {/* Right side */}
+            <div className="hidden lg:flex items-center gap-4">
+              <a
+                href="tel:+2252722251544"
+                className={cn(
+                  "flex items-center gap-2 text-sm font-medium transition-colors",
+                  isScrolled ? "text-foreground/80 hover:text-accent" : "text-white/80 hover:text-accent"
+                )}
+              >
+                <Phone size={16} />
+                27 22 25 15 44
+              </a>
               <button
                 onClick={() => setIsSearchOpen(true)}
-                className="flex items-center gap-2 px-3 py-2 text-muted-foreground hover:text-foreground bg-muted/50 hover:bg-muted rounded-lg transition-colors"
+                className={cn(
+                  "p-2 transition-colors rounded-lg",
+                  isScrolled ? "text-foreground/60 hover:text-accent" : "text-white/60 hover:text-accent"
+                )}
               >
-                <Search className="w-4 h-4" />
-                <span className="text-sm">Rechercher</span>
-                <kbd className="hidden xl:inline-flex items-center gap-0.5 px-1.5 py-0.5 text-[10px] bg-background rounded border border-border">
-                  ⌘K
-                </kbd>
+                <Search className="w-5 h-5" />
               </button>
               <Link to="/contact">
-                <Button variant="premium" size="lg">
+                <Button className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold px-6">
                   Nous contacter
                 </Button>
               </Link>
             </div>
 
-            {/* Mobile menu button */}
+            {/* Mobile toggle */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 text-foreground"
+              className={cn("lg:hidden p-2", isScrolled ? "text-foreground" : "text-white")}
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </nav>
 
-          {/* Mobile Navigation */}
-          <div
-            className={cn(
-              "lg:hidden overflow-hidden transition-all duration-300",
-              isMobileMenuOpen ? "max-h-[500px] mt-4" : "max-h-0"
-            )}
-          >
-            <div className="flex flex-col gap-2 py-4 border-t border-border">
-              {navigation.map((item) => (
+          {/* Mobile Nav */}
+          <div className={cn(
+            "lg:hidden overflow-hidden transition-all duration-300",
+            isMobileMenuOpen ? "max-h-[500px] mt-4" : "max-h-0"
+          )}>
+            <div className="flex flex-col gap-1 py-4 border-t border-border bg-card rounded-xl p-4 mt-2">
+              {navigation.map((item) =>
                 item.hasDropdown ? (
                   <div key={item.name}>
                     <button
                       onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                      className={cn(
-                        "font-medium transition-colors py-2 w-full text-left flex items-center justify-between",
-                        isServicesActive
-                          ? "text-primary"
-                          : "text-foreground/80 hover:text-primary"
-                      )}
+                      className="font-medium text-sm uppercase tracking-wide py-3 w-full text-left flex items-center justify-between text-foreground/80"
                     >
                       {item.name}
-                      <ChevronDown size={16} className={cn(
-                        "transition-transform",
-                        isMobileServicesOpen && "rotate-180"
-                      )} />
+                      <ChevronDown size={14} className={cn("transition-transform", isMobileServicesOpen && "rotate-180")} />
                     </button>
-                    <div className={cn(
-                      "overflow-hidden transition-all duration-300 pl-4",
-                      isMobileServicesOpen ? "max-h-96" : "max-h-0"
-                    )}>
+                    <div className={cn("overflow-hidden transition-all duration-300 pl-4", isMobileServicesOpen ? "max-h-96" : "max-h-0")}>
                       {services.map((service) => (
                         <Link
                           key={service.href}
                           to={service.href}
                           onClick={() => setIsMobileMenuOpen(false)}
-                          className="block py-2 text-foreground/70 hover:text-primary"
+                          className="block py-2 text-sm text-foreground/60 hover:text-accent"
                         >
                           {service.name}
                         </Link>
@@ -238,29 +199,14 @@ export function Header() {
                     key={item.name}
                     to={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={cn(
-                      "font-medium transition-colors py-2",
-                      location.pathname === item.href
-                        ? "text-primary"
-                        : "text-foreground/80 hover:text-primary"
-                    )}
+                    className="font-medium text-sm uppercase tracking-wide py-3 text-foreground/80 hover:text-accent"
                   >
                     {item.name}
                   </Link>
                 )
-              ))}
-              <button
-                onClick={() => {
-                  setIsMobileMenuOpen(false);
-                  setIsSearchOpen(true);
-                }}
-                className="flex items-center gap-2 py-2 text-foreground/80 hover:text-primary"
-              >
-                <Search className="w-4 h-4" />
-                Rechercher
-              </button>
+              )}
               <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-                <Button variant="premium" className="mt-2 w-full">
+                <Button className="bg-accent text-accent-foreground hover:bg-accent/90 mt-2 w-full font-semibold">
                   Nous contacter
                 </Button>
               </Link>
@@ -269,7 +215,6 @@ export function Header() {
         </div>
       </header>
 
-      {/* Global Search Modal */}
       <GlobalSearch isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </>
   );

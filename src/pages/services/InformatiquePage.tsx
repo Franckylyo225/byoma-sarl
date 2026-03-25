@@ -72,7 +72,7 @@ export default function InformatiquePage() {
                 </Button>
               </Link>
             </div>
-            <div className="rounded-2xl overflow-hidden shadow-premium">
+            <div className="rounded-2xl overflow-hidden shadow-md">
               <img src={serviceInformatique} alt="Création de sites web et développement informatique" className="w-full h-full object-cover" />
             </div>
           </div>

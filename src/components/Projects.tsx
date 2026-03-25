@@ -85,7 +85,7 @@ export function Projects() {
           className={`flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12 scroll-reveal ${headerReveal.isVisible ? "visible" : ""}`}
         >
           <div>
-            <span className="inline-block text-copper font-semibold text-sm uppercase tracking-widest mb-4">
+            <span className="inline-block text-accent font-semibold text-sm uppercase tracking-widest mb-4">
               Portfolio
             </span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
@@ -127,7 +127,7 @@ export function Projects() {
               <div
                 key={project.id}
                 ref={setRef(index)}
-                className={`group bg-card rounded-2xl overflow-hidden shadow-premium card-hover scroll-reveal ${
+                className={`group bg-card rounded-2xl overflow-hidden shadow-md card-hover scroll-reveal ${
                   visibleItems[index] ? "visible" : ""
                 }`}
                 style={{ transitionDelay: `${index * 150}ms` }}
@@ -148,7 +148,7 @@ export function Projects() {
                   <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
                   {project.category && (
                     <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-copper text-accent-foreground text-xs font-semibold rounded-full">
+                      <span className="px-3 py-1 bg-accent text-accent-foreground text-xs font-semibold rounded-full">
                         {project.category}
                       </span>
                     </div>
@@ -182,7 +182,7 @@ export function Projects() {
                    <div className="flex items-center justify-between pt-2">
                      <Link 
                        to={`/projets/${project.id}`}
-                       className="inline-flex items-center gap-2 text-copper font-medium hover:gap-3 transition-all"
+                       className="inline-flex items-center gap-2 text-accent font-medium hover:gap-3 transition-all"
                      >
                        Voir le projet
                        <ExternalLink className="w-4 h-4" />

@@ -73,7 +73,7 @@ export default function TopographiePage() {
                 </Button>
               </Link>
             </div>
-            <div className="rounded-2xl overflow-hidden shadow-premium">
+            <div className="rounded-2xl overflow-hidden shadow-md">
               <img src={serviceTopographie} alt="Technicien topographe avec équipement de mesure" className="w-full h-full object-cover" />
             </div>
           </div>

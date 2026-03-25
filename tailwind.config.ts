@@ -2,7 +2,12 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -13,10 +18,6 @@ export default {
       },
     },
     extend: {
-      fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        display: ["Montserrat", "system-ui", "sans-serif"],
-      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -62,24 +63,23 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
         byoma: {
+          dark: "hsl(var(--byoma-dark))",
           navy: "hsl(var(--byoma-navy))",
-          "navy-dark": "hsl(var(--byoma-navy-dark))",
           "navy-light": "hsl(var(--byoma-navy-light))",
-          red: "hsl(var(--byoma-red))",
-          "red-dark": "hsl(var(--byoma-red-dark))",
-          blue: "hsl(var(--byoma-blue))",
-          "blue-light": "hsl(var(--byoma-blue-light))",
+          lime: "hsl(var(--byoma-lime))",
+          "lime-light": "hsl(var(--byoma-lime-light))",
+          warm: "hsl(var(--byoma-warm))",
+          "warm-light": "hsl(var(--byoma-warm-light))",
         },
-        copper: {
-          DEFAULT: "hsl(var(--byoma-red))",
-          light: "hsl(358 75% 58%)",
-        },
-        "ane-green-dark": "hsl(var(--byoma-navy-dark))",
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      fontFamily: {
+        sans: ["DM Sans", "system-ui", "sans-serif"],
+        display: ["Playfair Display", "Georgia", "serif"],
       },
       keyframes: {
         "accordion-down": {
@@ -90,27 +90,12 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "float": {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-10px)" },
-        },
-        "pulse-soft": {
-          "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0.7" },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "float": "float 6s ease-in-out infinite",
-        "pulse-soft": "pulse-soft 3s ease-in-out infinite",
-      },
-      boxShadow: {
-        "premium": "0 4px 20px rgba(27, 43, 91, 0.08)",
-        "premium-lg": "0 8px 40px rgba(27, 43, 91, 0.12)",
-        "glow": "0 0 30px rgba(227, 30, 36, 0.2)",
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 } satisfies Config;

@@ -304,7 +304,7 @@ export default function TestimonialEditorPage() {
                 <Star
                   className={`w-6 h-6 ${
                     star <= formData.rating
-                      ? 'fill-copper text-copper'
+                      ? 'fill-copper text-accent'
                       : 'text-muted-foreground'
                   }`}
                 />
