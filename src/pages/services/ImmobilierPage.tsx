@@ -77,7 +77,7 @@ export default function ImmobilierPage() {
                 </Button>
               </Link>
             </div>
-            <div className="rounded-2xl overflow-hidden shadow-premium-lg">
+            <div className="rounded-2xl overflow-hidden shadow-lg">
               <img src={serviceImmobilier} alt="Résidence moderne — promotion immobilière" className="w-full h-[400px] object-cover" />
             </div>
           </div>

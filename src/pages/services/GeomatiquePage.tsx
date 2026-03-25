@@ -72,7 +72,7 @@ export default function GeomatiquePage() {
                 </Button>
               </Link>
             </div>
-            <div className="rounded-2xl overflow-hidden shadow-premium">
+            <div className="rounded-2xl overflow-hidden shadow-md">
               <img src={serviceGeomatique} alt="Technicien géomètre avec équipement GPS sur le terrain" className="w-full h-full object-cover" />
             </div>
           </div>

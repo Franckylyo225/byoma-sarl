@@ -73,7 +73,7 @@ export default function AmenagementFoncierPage() {
                 </Button>
               </Link>
             </div>
-            <div className="rounded-2xl overflow-hidden shadow-premium">
+            <div className="rounded-2xl overflow-hidden shadow-md">
               <img src={serviceAmenagement} alt="Équipe BYOMA SARL sur le terrain avec équipement topographique" className="w-full h-full object-cover" />
             </div>
           </div>

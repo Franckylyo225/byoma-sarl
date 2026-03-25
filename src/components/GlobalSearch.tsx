@@ -217,7 +217,7 @@ export function GlobalSearch({ isOpen, onClose }: GlobalSearchProps) {
                         <div className="flex items-center gap-2 mt-1">
                           <span className="text-xs text-muted-foreground">{result.date}</span>
                           {result.category && (
-                            <span className="text-xs px-2 py-0.5 bg-copper/20 text-copper rounded-full">
+                            <span className="text-xs px-2 py-0.5 bg-accent/20 text-accent rounded-full">
                               {result.category}
                             </span>
                           )}

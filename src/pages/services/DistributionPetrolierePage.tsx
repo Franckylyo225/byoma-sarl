@@ -77,7 +77,7 @@ export default function DistributionPetrolierePage() {
                 </Button>
               </Link>
             </div>
-            <div className="rounded-2xl overflow-hidden shadow-premium-lg">
+            <div className="rounded-2xl overflow-hidden shadow-lg">
               <img src={serviceDistribution} alt="Camions citernes — distribution pétrolière" className="w-full h-[400px] object-cover" />
             </div>
           </div>

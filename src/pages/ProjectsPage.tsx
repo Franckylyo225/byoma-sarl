@@ -161,7 +161,7 @@ export default function ProjectsPage() {
                 {paginatedProjects.map((project) => (
                   <div
                     key={project.id}
-                    className="group bg-card rounded-2xl overflow-hidden shadow-premium card-hover"
+                    className="group bg-card rounded-2xl overflow-hidden shadow-md card-hover"
                   >
                     {/* Image */}
                     <div className="relative h-56 overflow-hidden">
@@ -179,7 +179,7 @@ export default function ProjectsPage() {
                       <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
                       {project.category && (
                         <div className="absolute top-4 left-4">
-                          <span className="px-3 py-1 bg-copper text-accent-foreground text-xs font-semibold rounded-full">
+                          <span className="px-3 py-1 bg-accent text-accent-foreground text-xs font-semibold rounded-full">
                             {project.category}
                           </span>
                         </div>
@@ -213,7 +213,7 @@ export default function ProjectsPage() {
                        <div className="flex items-center justify-between pt-2">
                          <Link 
                            to={`/projets/${project.id}`}
-                           className="inline-flex items-center gap-2 text-copper font-medium hover:gap-3 transition-all"
+                           className="inline-flex items-center gap-2 text-accent font-medium hover:gap-3 transition-all"
                          >
                            Voir le projet
                            <ExternalLink className="w-4 h-4" />
