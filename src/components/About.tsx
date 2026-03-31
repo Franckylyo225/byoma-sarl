@@ -142,7 +142,7 @@ export function About() {
           {stats.map((stat, idx) => (
             <div
               key={idx}
-              className="text-center p-6 bg-primary rounded-2xl"
+              className="text-center p-6"
               style={{ animationDelay: `${idx * 150}ms` }}
             >
               <div className="text-4xl lg:text-5xl font-display font-bold text-accent mb-2">
