@@ -200,7 +200,7 @@ export function Hero() {
           </div>
 
           {/* Right: fixed agent image with glassmorphism card */}
-          <div className="hidden lg:flex lg:col-span-2 justify-end items-end">
+          <div className="hidden lg:flex lg:col-span-2 justify-end items-center">
             <div className="relative w-full max-w-sm xl:max-w-md">
               <div className="rounded-2xl overflow-hidden border border-white/20 backdrop-blur-sm bg-white/5 shadow-2xl">
                 <img
