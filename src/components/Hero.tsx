@@ -138,8 +138,8 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,50%,10%)] via-transparent to-[hsl(220,50%,10%)]/30" />
 
       {/* Content */}
-      <div className="container-custom w-full relative z-10 pb-12 lg:pb-16">
-        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
+      <div className="container-custom w-full relative z-10 absolute inset-0 flex flex-col justify-end pb-12 lg:pb-16">
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Left: sliding text */}
           <div className="lg:col-span-3 relative self-end">
             {slides.map((slide, index) => (
