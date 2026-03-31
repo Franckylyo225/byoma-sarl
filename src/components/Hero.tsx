@@ -239,13 +239,6 @@ export function Hero() {
           >
             <ChevronRight className="w-5 h-5" />
           </button>
-          {/* Progress bar */}
-          <div className="flex-1 h-px bg-white/10 ml-4">
-            <div
-              className="h-full bg-accent transition-all duration-500"
-              style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
-            />
-          </div>
         </div>
 
         {/* Stats below controls */}
