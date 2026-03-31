@@ -137,11 +137,29 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,50%,10%)]/90 via-[hsl(220,50%,10%)]/70 to-[hsl(220,50%,10%)]/40" />
       <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,50%,10%)] via-transparent to-[hsl(220,50%,10%)]/30" />
 
+      {/* Fixed agent image — centered vertically */}
+      <div className="hidden lg:block absolute right-[max(2rem,calc((100%-1280px)/2))] top-1/2 -translate-y-1/2 z-10">
+        <div className="relative w-[320px] xl:w-[380px]">
+          <div className="rounded-2xl overflow-hidden border border-white/20 backdrop-blur-sm bg-white/5 shadow-2xl">
+            <img
+              src={agentByoma}
+              alt="Agent BYOMA SARL"
+              className="w-full h-[420px] xl:h-[480px] object-cover object-top"
+            />
+          </div>
+          {/* Decorative glass badge */}
+          <div className="absolute -bottom-4 -left-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-5 py-3">
+            <span className="text-accent font-display font-bold text-lg">BYOMA</span>
+            <span className="text-white/60 text-sm ml-1">SARL</span>
+          </div>
+        </div>
+      </div>
+
       {/* Content */}
-      <div className="container-custom w-full relative z-10 absolute inset-0 flex flex-col justify-end pb-12 lg:pb-16">
-        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
+      <div className="container-custom w-full relative z-10 min-h-screen flex flex-col justify-end pb-12 lg:pb-16">
+        <div className="lg:max-w-[55%]">
           {/* Left: sliding text */}
-          <div className="lg:col-span-3 relative self-end">
+          <div className="relative">
             {slides.map((slide, index) => (
               <div
                 key={slide.id}
@@ -197,24 +215,6 @@ export function Hero() {
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Right: fixed agent image with glassmorphism card */}
-          <div className="hidden lg:flex lg:col-span-2 justify-end items-center absolute right-8 xl:right-16 top-1/2 -translate-y-1/2" style={{ height: 'auto' }}>
-            <div className="relative w-full max-w-sm xl:max-w-md">
-              <div className="rounded-2xl overflow-hidden border border-white/20 backdrop-blur-sm bg-white/5 shadow-2xl">
-                <img
-                  src={agentByoma}
-                  alt="Agent BYOMA SARL"
-                  className="w-full h-[420px] xl:h-[480px] object-cover object-top"
-                />
-              </div>
-              {/* Decorative glass badge */}
-              <div className="absolute -bottom-4 -left-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-5 py-3">
-                <span className="text-accent font-display font-bold text-lg">BYOMA</span>
-                <span className="text-white/60 text-sm ml-1">SARL</span>
-              </div>
-            </div>
           </div>
         </div>
 
