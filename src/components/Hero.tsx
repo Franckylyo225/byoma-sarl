@@ -8,6 +8,7 @@ import heroMain from "@/assets/hero-byoma-main.jpg";
 import heroNegoce from "@/assets/service-negoce.jpg";
 import heroDistribution from "@/assets/service-distribution.jpg";
 import heroImmobilier from "@/assets/service-immobilier.jpg";
+import agentByoma from "@/assets/agent-byoma.jpg";
 
 interface HeroSlide {
   id: string;
@@ -64,7 +65,7 @@ const fallbackSlides: HeroSlide[] = [
 ];
 
 const stats = [
-  { value: "3", label: "Secteurs d'activité" },
+  { value: "3+", label: "Secteurs d'activité" },
   { value: "2023", label: "Année de création" },
   { value: "100%", label: "Engagement client" },
 ];
@@ -115,8 +116,8 @@ export function Hero() {
   };
 
   return (
-    <section className="relative h-screen min-h-[700px] flex items-end overflow-hidden">
-      {/* Background */}
+    <section className="relative min-h-screen flex items-end overflow-hidden">
+      {/* Sliding backgrounds */}
       {slides.map((slide, index) => (
         <div
           key={slide.id}
@@ -133,14 +134,14 @@ export function Hero() {
       ))}
 
       {/* Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,50%,10%)]/90 via-[hsl(220,50%,10%)]/60 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,50%,10%)]/90 via-[hsl(220,50%,10%)]/70 to-[hsl(220,50%,10%)]/40" />
       <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,50%,10%)] via-transparent to-[hsl(220,50%,10%)]/30" />
 
       {/* Content */}
-      <div className="container-custom w-full relative z-10 pb-24 lg:pb-32">
-        <div className="grid lg:grid-cols-3 gap-12 items-end">
-          {/* Main text */}
-          <div className="lg:col-span-2">
+      <div className="container-custom w-full relative z-10 pb-12 lg:pb-16">
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-end">
+          {/* Left: sliding text */}
+          <div className="lg:col-span-3 relative">
             {slides.map((slide, index) => (
               <div
                 key={slide.id}
@@ -159,7 +160,7 @@ export function Hero() {
                   </div>
                 )}
 
-                <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 text-white">
+                <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] mb-6 text-white">
                   {slide.headline}
                   {slide.highlight && (
                     <span className="text-accent italic block">{slide.highlight}</span>
@@ -167,7 +168,7 @@ export function Hero() {
                 </h1>
 
                 {slide.description && (
-                  <p className="text-lg text-white/70 mb-8 max-w-xl leading-relaxed">
+                  <p className="text-base lg:text-lg text-white/70 mb-8 max-w-lg leading-relaxed">
                     {slide.description}
                   </p>
                 )}
@@ -198,45 +199,63 @@ export function Hero() {
             ))}
           </div>
 
-          {/* Stats sidebar */}
-          <div className="hidden lg:flex flex-col gap-8 border-l border-white/10 pl-8">
-            {stats.map((stat, idx) => (
-              <div key={idx}>
-                <div className="text-4xl font-display font-bold text-accent">{stat.value}</div>
-                <div className="text-sm text-white/50 uppercase tracking-wider mt-1">{stat.label}</div>
+          {/* Right: fixed agent image with glassmorphism card */}
+          <div className="hidden lg:flex lg:col-span-2 justify-end items-end">
+            <div className="relative w-full max-w-sm xl:max-w-md">
+              <div className="rounded-2xl overflow-hidden border border-white/20 backdrop-blur-sm bg-white/5 shadow-2xl">
+                <img
+                  src={agentByoma}
+                  alt="Agent BYOMA SARL"
+                  className="w-full h-[420px] xl:h-[480px] object-cover object-top"
+                />
               </div>
-            ))}
+              {/* Decorative glass badge */}
+              <div className="absolute -bottom-4 -left-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-5 py-3">
+                <span className="text-accent font-display font-bold text-lg">BYOMA</span>
+                <span className="text-white/60 text-sm ml-1">SARL</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Navigation */}
-        <div className="flex items-center gap-4 mt-12">
+        {/* Navigation controls */}
+        <div className="flex items-center gap-4 mt-10">
           <button
             onClick={prevSlide}
-            className="w-12 h-12 border border-white/20 flex items-center justify-center text-white hover:bg-accent hover:border-accent hover:text-accent-foreground transition-all"
+            className="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-accent hover:border-accent hover:text-accent-foreground transition-all"
             aria-label="Précédent"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
           <div className="flex items-center gap-1 text-sm text-white/50 font-medium">
-            <span className="text-white text-lg">0{currentSlide + 1}</span>
+            <span className="text-white text-lg font-display">0{currentSlide + 1}</span>
             <span className="mx-2">/</span>
             <span>0{slides.length}</span>
           </div>
           <button
             onClick={nextSlide}
-            className="w-12 h-12 border border-white/20 flex items-center justify-center text-white hover:bg-accent hover:border-accent hover:text-accent-foreground transition-all"
+            className="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-accent hover:border-accent hover:text-accent-foreground transition-all"
             aria-label="Suivant"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
-          {/* Progress */}
+          {/* Progress bar */}
           <div className="flex-1 h-px bg-white/10 ml-4">
             <div
               className="h-full bg-accent transition-all duration-500"
               style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
             />
           </div>
+        </div>
+
+        {/* Stats below controls */}
+        <div className="grid grid-cols-3 gap-8 mt-8 pt-8 border-t border-white/10 max-w-lg">
+          {stats.map((stat, idx) => (
+            <div key={idx}>
+              <div className="text-3xl lg:text-4xl font-display font-bold text-accent">{stat.value}</div>
+              <div className="text-xs text-white/50 uppercase tracking-wider mt-1">{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
