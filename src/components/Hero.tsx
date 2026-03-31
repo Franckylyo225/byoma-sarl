@@ -139,7 +139,7 @@ export function Hero() {
 
       {/* Fixed agent image — centered vertically */}
       <div className="hidden lg:block absolute right-[max(2rem,calc((100%-1280px)/2))] top-1/2 -translate-y-1/2 z-10">
-        <div className="relative w-[320px] xl:w-[380px]">
+        <div className="relative w-[360px] xl:w-[420px]">
           <div className="rounded-3xl border border-white/15 backdrop-blur-md bg-white/5 p-3">
             <div className="rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
               <img
