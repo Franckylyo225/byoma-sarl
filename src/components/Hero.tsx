@@ -116,7 +116,7 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-end overflow-hidden">
+    <section className="relative min-h-screen overflow-hidden">
       {/* Sliding backgrounds */}
       {slides.map((slide, index) => (
         <div
