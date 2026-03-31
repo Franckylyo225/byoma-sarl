@@ -139,9 +139,9 @@ export function Hero() {
 
       {/* Content */}
       <div className="container-custom w-full relative z-10 pb-12 lg:pb-16">
-        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-end">
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
           {/* Left: sliding text */}
-          <div className="lg:col-span-3 relative">
+          <div className="lg:col-span-3 relative self-end">
             {slides.map((slide, index) => (
               <div
                 key={slide.id}
