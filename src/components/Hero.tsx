@@ -137,7 +137,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,50%,10%)] via-transparent to-[hsl(220,50%,10%)]/30" />
 
       {/* Content */}
-      <div className="container-custom relative z-10 pb-24 lg:pb-32">
+      <div className="container-custom w-full relative z-10 pb-24 lg:pb-32">
         <div className="grid lg:grid-cols-3 gap-12 items-end">
           {/* Main text */}
           <div className="lg:col-span-2">
