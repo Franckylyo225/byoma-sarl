@@ -200,7 +200,7 @@ export function Hero() {
           </div>
 
           {/* Right: fixed agent image with glassmorphism card */}
-          <div className="hidden lg:flex lg:col-span-2 justify-end items-end">
+          <div className="hidden lg:flex lg:col-span-2 justify-end items-center">
             <div className="relative w-full max-w-sm xl:max-w-md">
               <div className="rounded-2xl overflow-hidden border border-white/20 backdrop-blur-sm bg-white/5 shadow-2xl">
                 <img
@@ -239,13 +239,6 @@ export function Hero() {
           >
             <ChevronRight className="w-5 h-5" />
           </button>
-          {/* Progress bar */}
-          <div className="flex-1 h-px bg-white/10 ml-4">
-            <div
-              className="h-full bg-accent transition-all duration-500"
-              style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
-            />
-          </div>
         </div>
 
         {/* Stats below controls */}
