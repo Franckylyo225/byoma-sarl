@@ -148,7 +148,7 @@ export function About() {
               <div className="text-4xl lg:text-5xl font-display font-bold text-accent mb-2">
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} trigger={statsVisible} />
               </div>
-              <div className="text-sm text-primary-foreground/60 uppercase tracking-wider">
+              <div className="text-sm text-muted-foreground uppercase tracking-wider">
                 {stat.label}
               </div>
             </div>
