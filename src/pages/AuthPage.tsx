@@ -42,17 +42,21 @@ export default function AuthPage() {
     }
   }, [user, isLoading, isRolesLoading, isAdmin, isModerator, navigate]);
 
-  const validate = () => {
+  const validate = (isSignUp = false) => {
     try {
-      authSchema.parse({ email, password });
+      if (isSignUp) {
+        signUpSchema.parse({ email, password, fullName, confirmPassword });
+      } else {
+        authSchema.parse({ email, password });
+      }
       setErrors({});
       return true;
     } catch (e) {
       if (e instanceof z.ZodError) {
-        const fieldErrors: { email?: string; password?: string } = {};
+        const fieldErrors: { email?: string; password?: string; fullName?: string; confirmPassword?: string } = {};
         e.errors.forEach((err) => {
-          if (err.path[0] === 'email') fieldErrors.email = err.message;
-          if (err.path[0] === 'password') fieldErrors.password = err.message;
+          const field = err.path[0] as string;
+          fieldErrors[field as keyof typeof fieldErrors] = err.message;
         });
         setErrors(fieldErrors);
       }
