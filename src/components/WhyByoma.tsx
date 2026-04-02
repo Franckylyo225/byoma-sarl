@@ -49,25 +49,21 @@ export function WhyByoma() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {pillars.map((pillar, index) => (
             <div
               key={index}
               ref={setRef(index)}
-              className={`group p-8 rounded-2xl bg-card border border-border hover:border-accent/20 transition-all duration-500 scroll-reveal ${
+              className={`group p-6 rounded-2xl bg-card border border-border hover:border-accent/30 hover:shadow-lg transition-all duration-500 scroll-reveal text-center ${
                 visibleItems[index] ? "visible" : ""
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="flex items-start gap-5">
-                <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors">
-                  <pillar.icon className="w-7 h-7 text-accent" />
-                </div>
-                <div>
-                  <h3 className="font-display text-xl font-bold text-foreground mb-2">{pillar.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{pillar.description}</p>
-                </div>
+              <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-accent/20 group-hover:scale-110 transition-all duration-300">
+                <pillar.icon className="w-7 h-7 text-accent" />
               </div>
+              <h3 className="font-display text-lg font-bold text-foreground mb-2">{pillar.title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">{pillar.description}</p>
             </div>
           ))}
         </div>
