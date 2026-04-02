@@ -7,7 +7,7 @@ import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
 import { z } from 'zod';
-import { Loader2, ArrowLeft, TreePine, Shield, Users } from 'lucide-react';
+import { Loader2, ArrowLeft, Building2, Shield, BarChart3 } from 'lucide-react';
 import authBg from '@/assets/auth-bg.jpg';
 import logoByoma from '@/assets/logo-byoma.png';
 
