@@ -23,12 +23,9 @@ import { logActivity } from '@/hooks/useActivityLogger';
 type ProjectImage = Tables<'project_images'>;
 
 const categories = [
-  'Topographie',
-  'Aménagement foncier',
-  'Aménagement forestier',
-  'Géomatique',
-  'BTP',
-  'Informatique',
+  'Négoce',
+  'Distribution pétrolière & gazière',
+  'Promotion & gestion immobilière',
 ];
 
 export default function ProjectEditorPage() {
