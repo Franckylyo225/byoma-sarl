@@ -34,8 +34,6 @@ const stats = [
 
 export default function AboutPage() {
   const historyReveal = useScrollReveal({ threshold: 0.2 });
-  const teamReveal = useScrollReveal({ threshold: 0.2 });
-  const { setRef: setTeamImageRef, visibleItems: teamImagesVisible } = useScrollRevealMultiple(3, { threshold: 0.2 });
   const { setRef: setValueRef, visibleItems: valuesVisible } = useScrollRevealMultiple(values.length, { threshold: 0.2 });
   const missionReveal = useScrollReveal({ threshold: 0.2 });
   const statsReveal = useScrollReveal({ threshold: 0.2 });
