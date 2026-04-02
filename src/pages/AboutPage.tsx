@@ -31,11 +31,6 @@ const stats = [
   { value: "∞", label: "Ambitions" },
 ];
 
-const teamImages = [
-  { src: teamDroneImage, alt: "Secteur énergétique" },
-  { src: teamWorkImage, alt: "Équipe sur le terrain" },
-  { src: teamGroupImage, alt: "Équipe BYOMA" },
-];
 
 export default function AboutPage() {
   const historyReveal = useScrollReveal({ threshold: 0.2 });
