@@ -28,6 +28,7 @@ export default function ArticleEditorPage() {
     excerpt: '',
     content: '',
     cover_image_url: '',
+    author_name: 'BYOMA SARL',
     published: false,
   });
 
@@ -57,6 +58,7 @@ export default function ArticleEditorPage() {
         excerpt: data.excerpt || '',
         content: data.content,
         cover_image_url: data.cover_image_url || '',
+        author_name: data.author_name || 'BYOMA SARL',
         published: data.published || false,
       });
     }
@@ -178,6 +180,16 @@ export default function ArticleEditorPage() {
                     value={formData.title}
                     onChange={(e) => setFormData({ ...formData, title: e.target.value })}
                     placeholder="Titre de l'article"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="author_name">Nom de l'auteur</Label>
+                  <Input
+                    id="author_name"
+                    value={formData.author_name}
+                    onChange={(e) => setFormData({ ...formData, author_name: e.target.value })}
+                    placeholder="BYOMA SARL"
                   />
                 </div>
 
