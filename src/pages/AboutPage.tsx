@@ -1,7 +1,7 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Award, Users, Target, ArrowRight, CheckCircle, History, UsersRound } from "lucide-react";
+import { Award, Users, Target, ArrowRight, CheckCircle, History } from "lucide-react";
 import aboutImage from "@/assets/about-team.jpg";
 import teamDroneImage from "@/assets/team-drone.jpg";
 import teamWorkImage from "@/assets/team-work.jpg";
