@@ -3,9 +3,6 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Award, Users, Target, ArrowRight, CheckCircle, History } from "lucide-react";
 import aboutImage from "@/assets/about-team.jpg";
-import teamDroneImage from "@/assets/team-drone.jpg";
-import teamWorkImage from "@/assets/team-work.jpg";
-import teamGroupImage from "@/assets/team-group.jpg";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { useScrollReveal, useScrollRevealMultiple } from "@/hooks/useScrollReveal";
 
