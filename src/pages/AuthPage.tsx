@@ -90,10 +90,10 @@ export default function AuthPage() {
 
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!validate()) return;
+    if (!validate(true)) return;
 
     setIsSubmitting(true);
-    const { error } = await signUp(email, password);
+    const { error } = await signUp(email, password, fullName);
     setIsSubmitting(false);
 
     if (error) {
