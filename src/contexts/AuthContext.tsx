@@ -27,10 +27,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [isModerator, setIsModerator] = useState(false);
   const [isSuperAdmin, setIsSuperAdmin] = useState(false);
 
-  const checkUserRoles = async (userId: string) => {
-    setIsRolesLoading(true);
+  const checkUserRoles = async (userId: string, isInitial = false) => {
+    if (isInitial) setIsRolesLoading(true);
     try {
-      // Check for super_admin role
       const { data: superAdminData } = await supabase.rpc('is_super_admin', {
         _user_id: userId
       });
@@ -53,7 +52,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setIsModerator(false);
       setIsSuperAdmin(false);
     } finally {
-      setIsRolesLoading(false);
+      if (isInitial) setIsRolesLoading(false);
     }
   };
 
