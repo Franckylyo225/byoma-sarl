@@ -27,8 +27,10 @@ const signUpSchema = authSchema.extend({
 export default function AuthPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [fullName, setFullName] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
+  const [errors, setErrors] = useState<{ email?: string; password?: string; fullName?: string; confirmPassword?: string }>({});
   
   const { signIn, signUp, user, isLoading, isRolesLoading, isAdmin, isModerator } = useAuth();
   const navigate = useNavigate();
