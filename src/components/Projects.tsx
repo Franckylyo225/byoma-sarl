@@ -10,7 +10,7 @@ type Project = Tables<'projects'> & {
   cover_image?: string;
 };
 
-const categories = ["Tous", "Aménagement forestier", "Aménagement foncier", "BTP"];
+const categories = ["Tous", "Négoce", "Distribution pétrolière & gazière", "Promotion & gestion immobilière"];
 
 export function Projects() {
   const [projects, setProjects] = useState<Project[]>([]);

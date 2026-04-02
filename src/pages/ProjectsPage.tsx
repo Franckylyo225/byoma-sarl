@@ -11,7 +11,7 @@ type Project = Tables<'projects'> & {
   cover_image?: string;
 };
 
-const categories = ["Tous", "Aménagement forestier", "Aménagement foncier", "BTP", "Topographie", "Géomatique"];
+const categories = ["Tous", "Négoce", "Distribution pétrolière & gazière", "Promotion & gestion immobilière"];
 const PROJECTS_PER_PAGE = 6;
 
 export default function ProjectsPage() {
