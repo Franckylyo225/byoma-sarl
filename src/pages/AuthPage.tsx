@@ -8,7 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
 import { z } from 'zod';
 import { Loader2, ArrowLeft, TreePine, Shield, Users } from 'lucide-react';
-import heroForestRoad from '@/assets/hero-forest-road.jpg';
+import authBg from '@/assets/auth-bg.jpg';
 import logoByoma from '@/assets/logo-byoma.png';
 
 const authSchema = z.object({
