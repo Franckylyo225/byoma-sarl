@@ -110,9 +110,11 @@ export function Hero() {
     return () => clearInterval(interval);
   }, [nextSlide]);
 
-  const getImageUrl = (imageUrl: string | null): string => {
-    if (!imageUrl) return heroMain;
-    return imageUrl;
+  const defaultImages = [heroMain, heroNegoce, heroDistribution, heroImmobilier];
+
+  const getImageUrl = (imageUrl: string | null, index: number): string => {
+    if (imageUrl) return imageUrl;
+    return defaultImages[index] || heroMain;
   };
 
   return (
@@ -126,7 +128,7 @@ export function Hero() {
           }`}
         >
           <img
-            src={getImageUrl(slide.image_url)}
+            src={getImageUrl(slide.image_url, index)}
             alt={slide.headline}
             className="w-full h-full object-cover scale-105"
           />
