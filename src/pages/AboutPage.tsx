@@ -202,52 +202,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Notre équipe */}
-      <section className="section-padding bg-secondary">
-        <div className="container-custom">
-          <div 
-            ref={teamReveal.ref}
-            className={`text-center max-w-4xl mx-auto mb-12 scroll-reveal ${teamReveal.isVisible ? "visible" : ""}`}
-          >
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl mb-6">
-              <UsersRound className="w-8 h-8 text-primary" />
-            </div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Notre équipe
-            </h2>
-            <p className="text-muted-foreground text-lg md:text-xl leading-relaxed">
-              Derrière BYOMA SARL, une équipe de professionnels passionnés et dévoués. Chaque membre apporte une expertise unique 
-              dans le négoce, l'énergie ou l'immobilier. Ensemble, nous travaillons pour vous offrir 
-              des solutions adaptées et innovantes.
-            </p>
-          </div>
-
-          {/* Team Images Grid */}
-          <div className="grid md:grid-cols-3 gap-6">
-            {teamImages.map((image, index) => (
-              <div 
-                key={index}
-                ref={setTeamImageRef(index)}
-                className={`relative rounded-2xl overflow-hidden shadow-lg group scroll-reveal ${
-                  teamImagesVisible[index] ? "visible" : ""
-                }`}
-                style={{ transitionDelay: `${index * 150}ms` }}
-              >
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4">
-                  <p className="text-primary-foreground font-semibold">{image.alt}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <Footer />
       <ScrollToTop />
     </div>
