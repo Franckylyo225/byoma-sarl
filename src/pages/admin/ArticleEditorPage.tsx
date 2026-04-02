@@ -58,6 +58,7 @@ export default function ArticleEditorPage() {
         excerpt: data.excerpt || '',
         content: data.content,
         cover_image_url: data.cover_image_url || '',
+        author_name: data.author_name || 'BYOMA SARL',
         published: data.published || false,
       });
     }
