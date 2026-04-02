@@ -1,0 +1,1 @@
+ALTER TABLE public.articles ADD COLUMN author_name text DEFAULT 'BYOMA SARL';

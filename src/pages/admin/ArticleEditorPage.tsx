@@ -184,6 +184,16 @@ export default function ArticleEditorPage() {
                 </div>
 
                 <div className="space-y-2">
+                  <Label htmlFor="author_name">Nom de l'auteur</Label>
+                  <Input
+                    id="author_name"
+                    value={formData.author_name}
+                    onChange={(e) => setFormData({ ...formData, author_name: e.target.value })}
+                    placeholder="BYOMA SARL"
+                  />
+                </div>
+
+                <div className="space-y-2">
                   <Label htmlFor="excerpt">Extrait</Label>
                   <Textarea
                     id="excerpt"
