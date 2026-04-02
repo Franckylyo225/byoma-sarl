@@ -81,7 +81,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setIsLoading(false);
 
       if (session?.user) {
-        checkUserRoles(session.user.id);
+        checkUserRoles(session.user.id, true);
       }
     });
 
