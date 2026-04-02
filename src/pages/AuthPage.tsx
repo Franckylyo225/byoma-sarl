@@ -7,8 +7,8 @@ import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
 import { z } from 'zod';
-import { Loader2, ArrowLeft, TreePine, Shield, Users } from 'lucide-react';
-import heroForestRoad from '@/assets/hero-forest-road.jpg';
+import { Loader2, ArrowLeft, Building2, Shield, BarChart3 } from 'lucide-react';
+import authBg from '@/assets/auth-bg.jpg';
 import logoByoma from '@/assets/logo-byoma.png';
 
 const authSchema = z.object({
@@ -126,8 +126,8 @@ export default function AuthPage() {
       {/* Left Side - Image & Welcome */}
       <div className="hidden lg:flex lg:w-1/2 xl:w-3/5 relative">
         <img
-          src={heroForestRoad}
-          alt="Forêt BYOMA SARL"
+          src={authBg}
+          alt="Chantier BYOMA SARL"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/70 to-primary/90" />
@@ -148,19 +148,19 @@ export default function AuthPage() {
           {/* Welcome Message */}
           <div className="max-w-lg">
             <h1 className="font-display text-4xl xl:text-5xl font-bold mb-6">
-              Bienvenue dans votre espace administration
+              Pilotez votre activité en toute simplicité
             </h1>
             <p className="text-primary-foreground/80 text-lg mb-8">
-              Gérez facilement le contenu de votre site : articles, projets, slides du héro et bien plus encore.
+              Accédez à votre tableau de bord pour gérer vos projets, publications et contenus en temps réel.
             </p>
             
             {/* Features */}
             <div className="space-y-4">
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center">
-                  <TreePine className="w-5 h-5" />
+                  <Building2 className="w-5 h-5" />
                 </div>
-                <span className="text-primary-foreground/90">Gestion des projets et réalisations</span>
+                <span className="text-primary-foreground/90">Suivi des projets immobiliers & BTP</span>
               </div>
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center">
@@ -170,9 +170,9 @@ export default function AuthPage() {
               </div>
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center">
-                  <Users className="w-5 h-5" />
+                  <BarChart3 className="w-5 h-5" />
                 </div>
-                <span className="text-primary-foreground/90">Publication d'actualités</span>
+                <span className="text-primary-foreground/90">Statistiques et gestion centralisée</span>
               </div>
             </div>
           </div>
