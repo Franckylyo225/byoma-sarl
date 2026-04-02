@@ -28,6 +28,7 @@ export default function ArticleEditorPage() {
     excerpt: '',
     content: '',
     cover_image_url: '',
+    author_name: 'BYOMA SARL',
     published: false,
   });
 
