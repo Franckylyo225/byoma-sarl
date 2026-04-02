@@ -16,11 +16,21 @@ const authSchema = z.object({
   password: z.string().min(6, 'Le mot de passe doit contenir au moins 6 caractères'),
 });
 
+const signUpSchema = authSchema.extend({
+  fullName: z.string().min(2, 'Le nom complet doit contenir au moins 2 caractères'),
+  confirmPassword: z.string(),
+}).refine((data) => data.password === data.confirmPassword, {
+  message: 'Les mots de passe ne correspondent pas',
+  path: ['confirmPassword'],
+});
+
 export default function AuthPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [fullName, setFullName] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
+  const [errors, setErrors] = useState<{ email?: string; password?: string; fullName?: string; confirmPassword?: string }>({});
   
   const { signIn, signUp, user, isLoading, isRolesLoading, isAdmin, isModerator } = useAuth();
   const navigate = useNavigate();
@@ -32,17 +42,21 @@ export default function AuthPage() {
     }
   }, [user, isLoading, isRolesLoading, isAdmin, isModerator, navigate]);
 
-  const validate = () => {
+  const validate = (isSignUp = false) => {
     try {
-      authSchema.parse({ email, password });
+      if (isSignUp) {
+        signUpSchema.parse({ email, password, fullName, confirmPassword });
+      } else {
+        authSchema.parse({ email, password });
+      }
       setErrors({});
       return true;
     } catch (e) {
       if (e instanceof z.ZodError) {
-        const fieldErrors: { email?: string; password?: string } = {};
+        const fieldErrors: { email?: string; password?: string; fullName?: string; confirmPassword?: string } = {};
         e.errors.forEach((err) => {
-          if (err.path[0] === 'email') fieldErrors.email = err.message;
-          if (err.path[0] === 'password') fieldErrors.password = err.message;
+          const field = err.path[0] as string;
+          fieldErrors[field as keyof typeof fieldErrors] = err.message;
         });
         setErrors(fieldErrors);
       }
@@ -76,10 +90,10 @@ export default function AuthPage() {
 
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!validate()) return;
+    if (!validate(true)) return;
 
     setIsSubmitting(true);
-    const { error } = await signUp(email, password);
+    const { error } = await signUp(email, password, fullName);
     setIsSubmitting(false);
 
     if (error) {
@@ -256,6 +270,21 @@ export default function AuthPage() {
               <TabsContent value="signup">
                 <form onSubmit={handleSignUp} className="space-y-5">
                   <div className="space-y-2">
+                    <Label htmlFor="signup-fullname">Nom complet</Label>
+                    <Input
+                      id="signup-fullname"
+                      type="text"
+                      placeholder="Jean Dupont"
+                      value={fullName}
+                      onChange={(e) => setFullName(e.target.value)}
+                      disabled={isSubmitting}
+                      className="h-12"
+                    />
+                    {errors.fullName && (
+                      <p className="text-sm text-destructive">{errors.fullName}</p>
+                    )}
+                  </div>
+                  <div className="space-y-2">
                     <Label htmlFor="signup-email">Email</Label>
                     <Input
                       id="signup-email"
@@ -283,6 +312,21 @@ export default function AuthPage() {
                     />
                     {errors.password && (
                       <p className="text-sm text-destructive">{errors.password}</p>
+                    )}
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="signup-confirm-password">Confirmer le mot de passe</Label>
+                    <Input
+                      id="signup-confirm-password"
+                      type="password"
+                      placeholder="••••••••"
+                      value={confirmPassword}
+                      onChange={(e) => setConfirmPassword(e.target.value)}
+                      disabled={isSubmitting}
+                      className="h-12"
+                    />
+                    {errors.confirmPassword && (
+                      <p className="text-sm text-destructive">{errors.confirmPassword}</p>
                     )}
                   </div>
                   <Button type="submit" className="w-full h-12 text-base" disabled={isSubmitting}>
