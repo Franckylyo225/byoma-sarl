@@ -270,6 +270,21 @@ export default function AuthPage() {
               <TabsContent value="signup">
                 <form onSubmit={handleSignUp} className="space-y-5">
                   <div className="space-y-2">
+                    <Label htmlFor="signup-fullname">Nom complet</Label>
+                    <Input
+                      id="signup-fullname"
+                      type="text"
+                      placeholder="Jean Dupont"
+                      value={fullName}
+                      onChange={(e) => setFullName(e.target.value)}
+                      disabled={isSubmitting}
+                      className="h-12"
+                    />
+                    {errors.fullName && (
+                      <p className="text-sm text-destructive">{errors.fullName}</p>
+                    )}
+                  </div>
+                  <div className="space-y-2">
                     <Label htmlFor="signup-email">Email</Label>
                     <Input
                       id="signup-email"
@@ -297,6 +312,21 @@ export default function AuthPage() {
                     />
                     {errors.password && (
                       <p className="text-sm text-destructive">{errors.password}</p>
+                    )}
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="signup-confirm-password">Confirmer le mot de passe</Label>
+                    <Input
+                      id="signup-confirm-password"
+                      type="password"
+                      placeholder="••••••••"
+                      value={confirmPassword}
+                      onChange={(e) => setConfirmPassword(e.target.value)}
+                      disabled={isSubmitting}
+                      className="h-12"
+                    />
+                    {errors.confirmPassword && (
+                      <p className="text-sm text-destructive">{errors.confirmPassword}</p>
                     )}
                   </div>
                   <Button type="submit" className="w-full h-12 text-base" disabled={isSubmitting}>
