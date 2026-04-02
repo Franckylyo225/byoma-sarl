@@ -24,8 +24,8 @@ type ProjectImage = Tables<'project_images'>;
 
 const categories = [
   'Négoce',
-  'Distribution pétrolière & gazière',
-  'Promotion & gestion immobilière',
+  'Pétrole & gaz',
+  'Immobilier',
 ];
 
 export default function ProjectEditorPage() {
