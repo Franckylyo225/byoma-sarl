@@ -11,14 +11,14 @@ const stats = [
   { value: 50, suffix: "+", label: "Projets livrés" },
   { value: 3, suffix: "+", label: "Secteurs d'activité" },
   { value: 100, suffix: "%", label: "Satisfaction client" },
-  { value: 10, suffix: "+", label: "Partenaires de confiance" },
+  { value: null, suffix: "∞", label: "Ambitions" },
 ];
 
-function AnimatedCounter({ value, suffix, trigger }: { value: number; suffix: string; trigger: boolean }) {
+function AnimatedCounter({ value, suffix, trigger }: { value: number | null; suffix: string; trigger: boolean }) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    if (!trigger) return;
+    if (!trigger || value === null) return;
     setCount(0);
     const duration = 2000;
     const steps = 60;
@@ -36,6 +36,7 @@ function AnimatedCounter({ value, suffix, trigger }: { value: number; suffix: st
     return () => clearInterval(timer);
   }, [trigger, value]);
 
+  if (value === null) return <>{suffix}</>;
   return <>{count}{suffix}</>;
 }
 
