@@ -11,7 +11,7 @@ const stats = [
   { value: 50, suffix: "+", label: "Projets livrés" },
   { value: 3, suffix: "+", label: "Secteurs d'activité" },
   { value: 100, suffix: "%", label: "Satisfaction client" },
-  { value: 10, suffix: "+", label: "Partenaires de confiance" },
+  { value: null, suffix: "∞", label: "Ambitions" },
 ];
 
 function AnimatedCounter({ value, suffix, trigger }: { value: number; suffix: string; trigger: boolean }) {
