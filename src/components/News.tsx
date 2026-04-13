@@ -67,7 +67,7 @@ export function News() {
               Nos dernières <span className="text-primary">nouvelles</span>
             </h2>
             <p className="text-muted-foreground text-lg mt-4 max-w-2xl">
-              Restez informés de nos projets, partenariats et innovations dans le domaine de l'aménagement foncier et forestier.
+              Restez informés de nos projets, partenariats et innovations 
             </p>
           </div>
           <Button variant="outline" size="lg" className="w-fit" asChild>
