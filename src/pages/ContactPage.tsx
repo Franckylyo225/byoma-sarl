@@ -117,7 +117,7 @@ export default function ContactPage() {
               {/* Map */}
               <div className="aspect-video bg-muted rounded-xl overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.0!2d-3.99!3d5.38!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMjInNDguMCJOIDPCsDU5JzI0LjAiVw!5e0!3m2!1sfr!2sci!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.5!2d-3.9924!3d5.3761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1ed5b17c97305%3A0x8c7b3f1d2a5e4f6!2sCocody+Plateau+Dokui+SOPIM!5e0!3m2!1sfr!2sci!4v1700000000000"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
