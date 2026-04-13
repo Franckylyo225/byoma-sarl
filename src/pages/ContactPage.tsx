@@ -34,8 +34,8 @@ const contactInfo = [
   {
     icon: Clock,
     title: "Horaires",
-    content: "Lun - Ven: 8h - 18h",
-    detail: "Sam: 8h - 12h",
+    content: "Lun - Ven: 8h - 17h30",
+    detail: "Sam: fermé",
   },
 ];
 
